@@ -41,7 +41,7 @@ class User extends uniqueFunc(Model) {
   }
 
   $beforeUpdate() {
-    return this.$checkUniqueness("email");
+    return this.$checkUniqueness("email", "username");
   }
 
   
