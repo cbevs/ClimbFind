@@ -16,9 +16,10 @@ const TopBar = ({ user }) => {
   ];
 
   const authenticatedListItems = [
+    user ? <li key="profile-image"><img src={user.profileImage} className="user-image"></img></li> : null,
     <li key="sign-out">
       <SignOutButton />
-    </li>,
+    </li>
   ];
 
   return (
