@@ -1,0 +1,17 @@
+import React from "react";
+
+const Hero = (props) => {
+ 
+  return (
+    <div className="hero-block">
+      <div className="grid-x">
+        <div className="cell medium-6 large-4 hero-left-block">
+          <h2 className="hero-h2">Let's find your next climb!</h2>
+        </div>
+        <div className="cell medium-6 large-8 hero-right-block"></div>
+      </div>
+    </div>
+  )
+}
+
+export default Hero
