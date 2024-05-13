@@ -37,12 +37,14 @@ class User extends uniqueFunc(Model) {
   }
 
   $beforeInsert() {
-    return this.$checkUniqueness("email");
+    return this.$checkUniqueness("email", "username");
   }
 
   $beforeUpdate() {
     return this.$checkUniqueness("email");
   }
+
+  
 
   $formatJson(json) {
     const serializedJson = super.$formatJson(json);

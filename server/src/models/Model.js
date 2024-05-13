@@ -19,12 +19,21 @@ class Model extends ObjectionModel {
     this.updatedAt = new Date().toISOString();
   }
 
-  async $checkUniqueness(property) {
-    const existingRecord = await this.constructor.query().where(property, this[property]).first();
+  async $checkUniqueness(property1, property2) {
+    
+    const existingRecord = await this.constructor.query().where(property1, this[property1]).first();
 
     if (existingRecord && existingRecord.id !== this.id) {
       const errorObject = {};
-      errorObject[property] = [{ keyword: "unique", message: "already in use" }];
+      errorObject[property1] = [{ keyword: "unique", message: "already in use" }];
+      throw new ValidationError({ type: "ModelValidation", status: 400, data: errorObject });
+    }
+
+    const existingRecord2 = await this.constructor.query().where(property2, this[property2]).first();
+
+    if (existingRecord2 && existingRecord2.id !== this.id) {
+      const errorObject = {};
+      errorObject[property2] = [{ keyword: "unique", message: "already in use" }];
       throw new ValidationError({ type: "ModelValidation", status: 400, data: errorObject });
     }
   }
