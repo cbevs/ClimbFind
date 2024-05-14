@@ -36,6 +36,36 @@ class User extends uniqueFunc(Model) {
     };
   }
 
+  static get relationMappings() {
+    const { Location, Area, Climb } = require("./index.js")
+    return {
+      locations: {
+        relation: Model.HasManyRelation,
+        modelClass: Location,
+        join: {
+          from: "users.id",
+          to: "locations.userId"
+        }
+      },
+      areas: {
+        relation: Model.HasManyRelation,
+        modelClass: Area,
+        join: {
+          from: "users.id",
+          to: "areas.userId" 
+        }
+      },
+      climbs: {
+        relation: Model.HasManyRelation,
+        modelClass: Climb,
+        join: {
+          from: "users.id",
+          to: "climbs.userId"
+        }
+      }
+    }
+  }
+
   $beforeInsert() {
     return this.$checkUniqueness("email", "username");
   }
