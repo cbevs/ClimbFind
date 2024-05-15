@@ -13,6 +13,8 @@ import Hero from "./Hero";
 import BottomBar from "./layout/BottomBar";
 import ClimbList from "./ClimbList";
 import ClimbShow from "./ClimbShow";
+import AreaShow from "./AreaShow";
+import AreaList from "./AreaList";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -38,6 +40,8 @@ const App = (props) => {
         <Route exact path="/user-sessions/new" component={SignInForm} />
         <Route exact path="/climbs" component={ClimbList} />
         <Route exact path="/climbs/:id" component={ClimbShow} />
+        <Route exact path="/areas" component={AreaList} />
+        <Route exact path="/areas/:id" component={AreaShow} />
       </Switch>
       <BottomBar />
     </Router>

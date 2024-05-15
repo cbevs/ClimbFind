@@ -1,43 +1,43 @@
 import React, { useState, useEffect } from "react";
-import ClimbTile from "./ClimbTile";
+import AreaTile from "./AreaTile";
 
-const ClimbList = (props) => {
-  const [climbs, setClimbs] = useState([])
+const AreaList = (props) => {
+  const [areas, setAreas] = useState([])
 
-  const getClimbs = async () => {
+  const getAreas = async () => {
     try {
-      const response = await fetch("/api/v1/climbs/recents")
+      const response = await fetch("/api/v1/areas/recents")
       if(!response.ok) {
         const newError = new Error(`${response.status} (${response.statusText})`)
         throw newError
       }
       const responseBody = await response.json()
-      setClimbs(responseBody.climbs)
+      setAreas(responseBody.areas)
     } catch(error) {
       console.error(error)
     }
   }
-  
-  const climbsArray = climbs.map(climb => {
-    return <ClimbTile key={climb.id} climb={climb} />
-  })
 
   useEffect(() => {
-    getClimbs()
+    getAreas()
   }, [])
+
+  const areaArray = areas.map(area => {
+    return <AreaTile key={area.id} area={area} />
+  })
 
   return (
     <div className="show-block">
       <div className="grid-x">
         <div className="cell medium-6 large-4 hero-left-block">
-          <h2 className="hero-h2">Here are the latest climbs in our database!</h2>
+          <h2 className="hero-h2">Here are the latest areas in our database!</h2>
         </div>
         <div className="cell medium-6 large-8 hero-right-block overflow-block">
-          {climbsArray}
+          {areaArray}
         </div>
       </div>
     </div>
   )
 }
 
-export default ClimbList
+export default AreaList

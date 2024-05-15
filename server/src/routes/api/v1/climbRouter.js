@@ -6,13 +6,11 @@ const climbRouter = new express.Router()
 climbRouter.get("/recents", async (req, res) => {
   try{
     const climbData = await Climb.query().range(0, 4)
-    console.log(climbData)
     const serializedClimbData = await Promise.all(climbData.results.map(async climb => {
       return await ClimbSerializer.getClimbInfo(climb)
     }))
     res.status(200).json({ climbs: serializedClimbData })
   } catch(error) {
-    console.log(error)
     res.status(500).json({ errors: error })
   }
 })
