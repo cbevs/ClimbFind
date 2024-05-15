@@ -11,6 +11,8 @@ import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 import Hero from "./Hero";
 import BottomBar from "./layout/BottomBar";
+import ClimbList from "./ClimbList";
+import ClimbShow from "./ClimbShow";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -34,6 +36,8 @@ const App = (props) => {
         <Route exact path="/" component={Hero} />
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
+        <Route exact path="/climbs" component={ClimbList} />
+        <Route exact path="/climbs/:id" component={ClimbShow} />
       </Switch>
       <BottomBar />
     </Router>
