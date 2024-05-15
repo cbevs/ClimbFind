@@ -28,9 +28,9 @@ const ClimbShow = (props) => {
   }, [])
 
   return (
-    <div className="climb-show-block">
+    <div className="show-block">
     <div className="grid-x">
-      <div className="cell small-4 climb-show-left">
+      <div className="cell medium-6 large-4 show-left">
         <h2 className="show-h2">{climb.name}</h2>
         <Link to={`/areas/${climb.areaId}`} className="climb-link light show-a">{climb.area}</Link>
         <p className="features-p light">{features}</p>
@@ -38,10 +38,9 @@ const ClimbShow = (props) => {
         <p className="show-p">{climb.description}</p>
         <p className="show-p">{climb.directions}</p>
       </div>
-      <div className="cell small-4 climb-show-middle">
+      <div className="cell medium-6 large-8 show-middle">
         <img src={climb.climbImage} className="climb-show-image" alt="placeholder pictures of mountains"/>
       </div>
-      <div className="cell small-2 climb-show-right"></div>
     </div>
   </div>
   )

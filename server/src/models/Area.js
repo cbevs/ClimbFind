@@ -25,7 +25,7 @@ class Area extends Model {
         modelClass: User,
         join: {
           from: "areas.userId",
-          to: "user.id"
+          to: "users.id"
         }
       },
       location: {
