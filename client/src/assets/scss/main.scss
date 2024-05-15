@@ -47,7 +47,19 @@ body {
   font-weight: 300;
 }
 
-.top-bar-left a:hover {
+.top-bar-menu:focus {
+  color: #6e69c8;
+}
+
+.top-bar-menu:hover {
+  color: #514bca;
+}
+
+.app-name {
+  color: #514bca;
+}
+
+.menu .menu-text {
   color: #514bca;
 }
 
@@ -62,6 +74,15 @@ body {
 
 .button:hover {
   background-color: #7e7acb;
+  color: #fff;
+}
+
+.button:focus {
+  background-color: #514bca;
+  color: #fff;
+}
+
+.focused-button:focus {
   color: #fff;
 }
 
@@ -138,4 +159,101 @@ body {
   margin: 0 0 1rem 0;
   padding: 0;
   border-radius: 20px;
+}
+
+.climb-tile {
+  list-style-type: none;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-weight: 300;
+  margin: 1rem 0 0.5rem 3rem;
+}
+
+.climb-info-title {
+  padding-left: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.heavy {
+  font-weight: 600;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.large-text {
+  font-size: 20px;
+}
+
+.area-small-text {
+  font-size: 18px;
+}
+
+.climb-tile-pad-left {
+  padding-left: 1rem;
+  margin-top: -0.5rem;
+}
+
+.overflow-block {
+  overflow: auto;
+}
+
+.climb-link {
+  color: #000;
+  background-color: #8b88c700;
+}
+
+.climb-link:hover {
+  color: #514bca;
+}
+
+.climb-show-block {
+  background-color: #ffffffb2;
+  height: 500px;
+  width: 90%;
+  margin: 1rem auto 0 auto;
+  padding: 1.5rem;
+}
+
+.climb-show-left {
+  height: 450px;
+  padding: 1rem;
+  background-color: #514bca65;
+  overflow: auto;
+}
+
+.climb-show-middle {
+  height: 450px;
+  background-color: #514bca65;
+}
+
+.climb-show-right {
+  height: 450px;
+  background-color: #514bca65;
+}
+
+.show-a {
+  margin: -1rem 0 0 1rem;
+}
+
+.show-h2 {
+  margin-bottom: -10px;
+}
+
+.features-p {
+  padding: 0.5rem 0 0 1rem;
+  font-size: 14px;
+  font-style: italic;
+  margin: 0;
+}
+
+.show-p {
+  padding: 0.5rem 0 0 1rem;
+  margin: 0;
+}
+.climb-show-image {
+  max-height: 100%;
 }
