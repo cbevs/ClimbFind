@@ -1,6 +1,5 @@
 import express from "express"
 import { Climb } from "../../../models/index.js"
-import { raw } from "objection"
 import ClimbSerializer from "../../../serializers/ClimbSerializer.js"
 const climbRouter = new express.Router()
 
