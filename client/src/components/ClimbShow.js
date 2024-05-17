@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import getFeatures from "../services/getFeatures";
+import getFeaturesList from "../services/getFeaturesList";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ClimbShow = (props) => {
 
@@ -15,7 +16,7 @@ const ClimbShow = (props) => {
         throw newError
       }
       const responseBody = await response.json()
-      const formattedFeatures = getFeatures(responseBody.climb.features)
+      const formattedFeatures = getFeaturesList(responseBody.climb.features)
       setFeatures(formattedFeatures)
       setClimb(responseBody.climb)
     } catch(error) {
@@ -31,6 +32,10 @@ const ClimbShow = (props) => {
     <div className="show-block">
     <div className="grid-x">
       <div className="cell medium-6 large-4 show-left">
+      <Link to={`/areas/${climb.areaId}`} className="back-link">
+          <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
+            Click me to go to this climb's area!
+        </Link>
         <h2 className="show-h2">{climb.name}</h2>
         <Link to={`/areas/${climb.areaId}`} className="climb-link light show-a">{climb.area}</Link>
         <p className="features-p light">{features}</p>

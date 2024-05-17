@@ -12,6 +12,17 @@ class ClimbSerializer {
     serializedClimb.area = area.name
     return serializedClimb
   }
+
+  static getClimbInfoForArea(climb) {
+    const allowedAttributes = ["id", "name", "grade", "rating"]
+    const serializedClimb = {}
+
+    for (const attribute of allowedAttributes) {
+      serializedClimb[attribute] = climb[attribute]
+    }
+
+    return serializedClimb
+  }
 }
 
 export default ClimbSerializer
