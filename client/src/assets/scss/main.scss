@@ -1,6 +1,6 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 @include foundation-everything;
 // place global css here
 *,
@@ -20,10 +20,11 @@ body {
 
 .hero-h2 {
   font-family: "Inter", "Arial", sans-serif;
+  line-height: 90%;
 }
 
 .bottom-bar {
-  padding: .5rem;
+  padding: 0.5rem;
   background-color: #514bca65;
   position: fixed;
   bottom: 0;
@@ -41,7 +42,8 @@ body {
   padding: 1rem;
 }
 
-.top-bar ul, a {
+.top-bar ul,
+a {
   background-color: #fff;
   color: #888888;
   font-weight: 300;
@@ -98,11 +100,13 @@ body {
   height: 450px;
   padding: 1rem;
   background-color: #514bca65;
+  border-radius: 10px 0px 0px 10px;
 }
 
 .hero-right-block {
   height: 450px;
   background-color: #8b88c765;
+  border-radius: 0px 10px 10px 0px;
 }
 
 .register-form-error {
@@ -128,7 +132,7 @@ body {
 
 .drag-and-drop p {
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
 .form-round {
@@ -150,7 +154,7 @@ body {
 
 .errors {
   list-style-type: none;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .error-callout {
@@ -256,4 +260,124 @@ body {
 }
 .climb-show-image {
   max-height: 100%;
+}
+
+.star-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.star-on {
+  color: #000;
+}
+.star-off {
+  color: #fff;
+}
+
+.new-climb-form select,
+textarea {
+  border-radius: 10px;
+}
+
+.new-climb-form-option {
+  border-radius: 10px;
+}
+
+.form-submit-button input {
+  border-radius: 50%;
+}
+
+.climb-input-left-pad {
+  padding-bottom: 0.5rem;
+}
+
+.no-climbs {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #514bca65;
+}
+
+.area-climb-button {
+  padding: 10px 20px 10px 20px;
+  background-color: #514bca;
+  border-radius: 20px;
+  text-align: center;
+  color: #fff;
+  width: 50%;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition:
+    background-color 0.5s ease-out,
+    color 0.5s ease-out;
+}
+
+.area-climb-button:hover {
+  background-color: #7e7acb;
+  color: #fff;
+  transition:
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
+}
+
+.form-label-p {
+  font-size: 0.875rem;
+  line-height: 1.8;
+}
+
+.climb-image {
+  padding: 10px 20px 10px 20px;
+  background-color: #514bca;
+  border-radius: 20px;
+  text-align: center;
+  color: #fff;
+  width: 50%;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition:
+    background-color 0.5s ease-out,
+    color 0.5s ease-out;
+}
+
+.climb-image:hover {
+  background-color: #7e7acb;
+  color: #fff;
+  transition:
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
+}
+
+.climb-image p {
+  margin: 0;
+}
+
+.back-link {
+  display: block;
+  padding-bottom: 0.5rem;
+  background-color: transparent;
+  color: #000;
+}
+
+.back-link:hover {
+  color: #514bca;
+}
+
+.to-climbs-icon {
+  background-color: transparent;
+  color: #000;
+  font-size: 50px;
+  cursor: pointer;
+  transition:
+    background-color 0.5s ease-out,
+    color 0.5s ease-out;
+}
+
+.to-climbs-icon:hover {
+  color: #8b88c765;
+  transition:
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
 }

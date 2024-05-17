@@ -1,8 +1,12 @@
 import express from "express"
 import { Area } from "../../../models/index.js"
 import AreaSerializer from "../../../serializers/AreaSerializer.js"
+import areaClimbRouter from "./areaClimbRouter.js"
+import ClimbSerializer from "../../../serializers/ClimbSerializer.js"
 
 const areasRouter = new express.Router()
+
+areasRouter.use("/:id/add-climb", areaClimbRouter)
 
 areasRouter.get("/recents", async (req, res) => {
   try{
@@ -10,9 +14,9 @@ areasRouter.get("/recents", async (req, res) => {
     const serializedAreaData = await Promise.all(areaData.results.map(async area => {
       return await AreaSerializer.getAreaInfo(area)
     }))
-    res.status(200).json({ areas: serializedAreaData })
+    return res.status(200).json({ areas: serializedAreaData })
   } catch(error) {
-    res.status(500).json({ errors: error })
+    return res.status(500).json({ errors: error })
   }
 })
 
@@ -24,14 +28,14 @@ areasRouter.get("/:id", async (req, res) => {
 
     const climbData = await areaData.$relatedQuery("climbs")
     const climbs = climbData.map(climb => {
-      return { name: climb.name, id: climb.id, grade: climb.grade, rating: climb.rating }
+      return ClimbSerializer.getClimbInfoForArea(climb) 
     })
     
     serializedAreaData.climbs = climbs
-    res.status(200).json({ areas: serializedAreaData })
+    return res.status(200).json({ areas: serializedAreaData })
   } catch(error) {
     console.log(error)
-    res.status(500).json({ errors: error })
+    return res.status(500).json({ errors: error })
   }
 })
 

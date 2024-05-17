@@ -9,7 +9,7 @@ class Climb extends Model {
   static get jsonSchema() {
     return {
       type: "object",
-      required: ["name", "grade", "userId", "areaId"],
+      required: ["name", "grade", "userId", "areaId", "features"],
       properties: {
         name: { type: "string", minLength: 1 },
         grade: { type: "string", minLength: 1, maxLength: 5 },

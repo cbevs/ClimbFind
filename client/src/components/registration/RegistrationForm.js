@@ -16,6 +16,8 @@ const RegistrationForm = () => {
     passwordConfirmation: "",
   });
 
+  console.log(userPayload.profileImage)
+
   const [errors, setErrors] = useState({});
   const [serverErrors, setServerErrors] = useState({});
   const [shouldRedirect, setShouldRedirect] = useState(false);
