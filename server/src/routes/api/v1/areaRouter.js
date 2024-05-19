@@ -16,7 +16,7 @@ areasRouter.get("/recents", async (req, res) => {
     }))
     return res.status(200).json({ areas: serializedAreaData })
   } catch(error) {
-    return res.status(500).json({ errors: error })
+    return res.status(500).json({ errors: error.message })
   }
 })
 
@@ -34,8 +34,7 @@ areasRouter.get("/:id", async (req, res) => {
     serializedAreaData.climbs = climbs
     return res.status(200).json({ areas: serializedAreaData })
   } catch(error) {
-    console.log(error)
-    return res.status(500).json({ errors: error })
+    return res.status(500).json({ errors: error.message })
   }
 })
 

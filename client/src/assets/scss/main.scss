@@ -240,7 +240,8 @@ a {
 }
 
 .show-a {
-  margin: -1rem 0 0 1rem;
+  margin: 0.5rem 0rem 0rem 1rem;
+  display: block;
 }
 
 .show-h2 {
@@ -281,7 +282,7 @@ textarea {
   border-radius: 10px;
 }
 
-.new-climb-form-option {
+.new-climb-form-option, .new-form-option {
   border-radius: 10px;
 }
 

@@ -41,6 +41,7 @@ const AreaShow = (props) => {
   const areaDetails = 
    <>
       <h2 className="show-h2">{area.name}</h2>
+      <Link to={`/locations/${area.locationId}`} className="climb-link light show-a">{area.locationName}</Link>
       <p className="show-p heavy">{area.climbCount} { area.climbCount === "0" || area.climbCount > 1 ? "climbs" : "climb" }</p>
       <p className="show-p">{area.description}</p>
       <p onClick={showNewClimbForm} className="area-climb-button">Add new climb</p>

@@ -38,17 +38,16 @@ areaClimbRouter.post("/", uploadImage.single("climbImage"), async (req, res) => 
     if(!existingClimb) {
       const newClimbData = await Climb.query().insertAndFetch(cleanedInput)
       const newClimbForArea = ClimbSerializer.getClimbInfoForArea(newClimbData)
-    return res.status(200).json({ climb: newClimbForArea })
+    return res.status(201).json({ climb: newClimbForArea })
     } else {
       const alreadyExists = [{message: "already exists in the database", keyword: 'exists' }]
       return res.status(422).json({ errors: { name: alreadyExists } })
     }
   } catch(error) {
-    console.log(error)
     if (error instanceof ValidationError) {
       return res.status(422).json({ errors: error.data })
     }
-    return res.status(500).json({ errors: error })
+    return res.status(500).json({ errors: error.message })
   }
 })
 
