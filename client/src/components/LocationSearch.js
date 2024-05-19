@@ -68,7 +68,6 @@ const LocationSearch = ({ showSearchForm, setLocations }) => {
           />
         </label>
 
-
         <div className="button-group">
           <button type="button" className="button" onClick={clearForm}>
             Clear
