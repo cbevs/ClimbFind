@@ -117,7 +117,7 @@ const ClimbForm = ({ showNewClimbForm, setArea, area, areaId }) => {
       } else {
         const newClimb = await response.json()
         setArea({ ...area, climbs: [...area.climbs, newClimb.climb] })
-        setErrors([])
+        showNewClimbForm()
       }
     } catch(error) {
       console.error(error)
@@ -128,7 +128,7 @@ const ClimbForm = ({ showNewClimbForm, setArea, area, areaId }) => {
     <>
       <p className="area-climb-button" onClick={showNewClimbForm}>Back to area details</p>
       <form className="new-climb-form" onSubmit={onSubmitHandler}>
-        <label htmlFor="name">
+        <label>
           Climb Name:
           <input
           className="new-climb-form-option"
@@ -201,7 +201,7 @@ const ClimbForm = ({ showNewClimbForm, setArea, area, areaId }) => {
         
         <ErrorList errors={errors} />
         <div className="button-group">
-          <button className="button" onClick={clearForm}>
+          <button type="button" className="button" onClick={clearForm}>
             Clear
           </button>
           <input className="button" type="submit" value="Submit" />

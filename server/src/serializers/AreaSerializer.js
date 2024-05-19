@@ -19,6 +19,20 @@ class AreaSerializer {
 
     return serializedArea
   }
+
+  static async getBasicAreaInfo(area) {
+    const allowedAttributes = ["id", "name"]
+    const serializedArea = {}
+
+    for (const attribute of allowedAttributes) {
+      serializedArea[attribute] = area[attribute]
+    }
+
+    const climbCount = await area.$relatedQuery("climbs")
+    serializedArea.climbCount = climbCount.length.toString()
+
+    return serializedArea
+  }
 }
 
 export default AreaSerializer

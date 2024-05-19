@@ -1,6 +1,12 @@
 const Model = require("./Model")
+const uniqueFactory = require("objection-unique")
 
-class Location extends Model {
+const unique = uniqueFactory({
+  fields: [["name", "location"]],
+  identifiers: ["id"]
+})
+
+class Location extends unique(Model) {
   static get tableName() {
     return "locations"
   }

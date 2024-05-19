@@ -11,7 +11,7 @@ climbRouter.get("/recents", async (req, res) => {
     }))
     return res.status(200).json({ climbs: serializedClimbData })
   } catch(error) {
-    return res.status(500).json({ errors: error })
+    return res.status(500).json({ errors: error.message })
   }
 })
 
@@ -22,7 +22,7 @@ climbRouter.get("/:id", async (req, res) => {
     const serializedClimbData = await ClimbSerializer.getClimbInfo(climbData)
     return res.status(200).json({ climb: serializedClimbData })
   } catch(error) {
-    return res.status(500).json({ errors: error })
+    return res.status(500).json({ errors: error.message })
   }
 })
 
@@ -42,7 +42,7 @@ climbRouter.post("/search", async (req, res) => {
   })
     return res.status(200).json({ climbs: climbData })
   } catch(error) {
-    return res.status(500).json({ errors: error })
+    return res.status(500).json({ errors: error.message })
   }
 })
 

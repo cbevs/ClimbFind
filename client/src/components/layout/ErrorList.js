@@ -1,4 +1,5 @@
 import React from "react";
+import _ from "lodash";
 
 const ErrorList = (props) => {
   const errantFields = Object.keys(props.errors);
@@ -8,7 +9,7 @@ const ErrorList = (props) => {
       index++;
       return (
         <li className="errors" key={index}>
-          {field} {props.errors[field]}
+           {_.capitalize(props.errors[field])}
         </li>
       );
     });

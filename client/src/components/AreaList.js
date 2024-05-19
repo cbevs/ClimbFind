@@ -3,7 +3,7 @@ import AreaTile from "./AreaTile";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const AreaList = (props) => {
+const AreaList = () => {
   const [areas, setAreas] = useState([])
 
   const getAreas = async () => {
@@ -31,12 +31,12 @@ const AreaList = (props) => {
   return (
     <div className="show-block">
       <div className="grid-x">
-        <div className="cell medium-6 large-4 hero-left-block">
+        <div className="cell medium-6 large-4 hero-left-block overflow-block">
         <Link to="/" className="back-link">
           <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
             Back to homepage
         </Link>
-          <h2 className="hero-h2">Here are the latest areas in our database!</h2>
+        <h2 className="hero-h2">Here are the latest areas in our database!</h2>
         </div>
         <div className="cell medium-6 large-8 hero-right-block overflow-block">
           {areaArray}

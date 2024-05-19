@@ -15,6 +15,8 @@ import ClimbList from "./ClimbList";
 import ClimbShow from "./ClimbShow";
 import AreaShow from "./AreaShow";
 import AreaList from "./AreaList";
+import LocationList from "./LocationList";
+import LocationShow from "./LocationShow";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -42,6 +44,8 @@ const App = (props) => {
         <Route exact path="/climbs/:id" component={ClimbShow} />
         <Route exact path="/areas" component={AreaList} />
         <Route exact path="/areas/:id" component={AreaShow} />
+        <Route exact path="/locations" component={LocationList} />
+        <Route exact path="/locations/:id" component={LocationShow} />
       </Switch>
       <BottomBar />
     </Router>
