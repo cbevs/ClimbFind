@@ -32,7 +32,7 @@ const ClimbList = (props) => {
   return (
     <div className="show-block">
       <div className="grid-x">
-        <div className="cell medium-6 large-4 hero-left-block overflow-block">
+        <div className="cell small-2 medium-4 large-4 hero-left-block overflow-block">
         <Link to="/" className="back-link">
           <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
             Back
@@ -41,7 +41,7 @@ const ClimbList = (props) => {
           <p>Search For a Climb</p>
           <ClimbSearch setClimbs={setClimbs}/>
         </div>
-        <div className="cell medium-6 large-8 hero-right-block overflow-block">
+        <div className="cell small-2 medium-4 large-4 hero-right-block overflow-block">
           { climbsArray.length !== 0 ? climbsArray : <div className="no-climbs"><h2>No climbs found!</h2></div>}
         </div>
       </div>

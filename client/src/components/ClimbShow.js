@@ -31,7 +31,7 @@ const ClimbShow = (props) => {
   return (
     <div className="show-block">
     <div className="grid-x">
-      <div className="cell medium-6 large-4 show-left">
+      <div className="cell small-2 medium-4 large-4 hero-left-block">
       <Link to={`/areas/${climb.areaId}`} className="back-link">
           <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
             Click me to go to this climb's area!
@@ -43,7 +43,7 @@ const ClimbShow = (props) => {
         <p className="show-p">{climb.description}</p>
         <p className="show-p">{climb.directions}</p>
       </div>
-      <div className="cell medium-6 large-8 show-middle">
+      <div className="cell small-2 medium-4 large-4 hero-right-block clear-bg">
         <img src={climb.climbImage} className="climb-show-image" alt="placeholder pictures of mountains"/>
       </div>
     </div>

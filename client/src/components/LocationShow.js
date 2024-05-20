@@ -53,7 +53,7 @@ const LocationShow = (props) => {
   return (
     <div className="show-block">
     <div className="grid-x">
-      <div className="cell medium-6 large-4 hero-left-block overflow-block">
+      <div className="cell small-2 medium-4 large-4 hero-left-block overflow-block">
         <Link to="/locations" className="back-link">
           <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
             Back to location list
@@ -66,7 +66,7 @@ const LocationShow = (props) => {
           /> 
         }
       </div>
-      <div className="cell medium-6 large-8 hero-right-block overflow-block">
+      <div className="cell small-2 medium-4 large-4 hero-right-block overflow-block">
         {areasArray}
       </div>
     </div>
