@@ -25,14 +25,14 @@ body {
 
 .bottom-bar {
   padding: 0.5rem;
-  background-color: #514bca65;
+  background-color: #81d775;
   position: fixed;
   bottom: 0;
   width: 100%;
 }
 
 .credits {
-  color: #514bca9c;
+  color: #419c34;
   margin: 0;
   padding: 0;
   font-size: 10px;
@@ -49,20 +49,28 @@ a {
   font-weight: 300;
 }
 
+.grid-x {
+  justify-content: center;
+}
+
+.top-button {
+  background-color: #81d775;
+}
+
 .top-bar-menu:focus {
-  color: #6e69c8;
+  color: #2d5a26;
 }
 
 .top-bar-menu:hover {
-  color: #514bca;
+  color: #448b3a;
 }
 
 .app-name {
-  color: #514bca;
+  color: #81d775;
 }
 
 .menu .menu-text {
-  color: #514bca;
+  color: #448b3a;
 }
 
 .top-bar {
@@ -70,17 +78,17 @@ a {
 }
 
 .button {
-  background-color: #514bca;
+  background-color: #448b3a;
   border-radius: 20px;
 }
 
 .button:hover {
-  background-color: #7e7acb;
+  background-color: #2d5a26;
   color: #fff;
 }
 
 .button:focus {
-  background-color: #514bca;
+  background-color: #448b3a;
   color: #fff;
 }
 
@@ -99,13 +107,13 @@ a {
 .hero-left-block {
   height: 450px;
   padding: 1rem;
-  background-color: #514bca65;
+  background-color: #81d775;
   border-radius: 10px 0px 0px 10px;
 }
 
 .hero-right-block {
   height: 450px;
-  background-color: #8b88c765;
+  background-color: #e9e9e9;
   border-radius: 0px 10px 10px 0px;
 }
 
@@ -113,7 +121,7 @@ a {
   margin: -0.5rem 1rem 0rem 1rem;
   font-size: 0.75rem;
   font-weight: bold;
-  color: #514bca;
+  color: #448b3a;
 }
 
 .drag-and-drop {
@@ -158,7 +166,7 @@ a {
 }
 
 .error-callout {
-  background-color: #514bca9c;
+  background-color: #448b3a9c;
   position: relative;
   margin: 0 0 1rem 0;
   padding: 0;
@@ -211,7 +219,7 @@ a {
 }
 
 .climb-link:hover {
-  color: #514bca;
+  color: #448b3a;
 }
 
 .show-block {
@@ -225,18 +233,18 @@ a {
 .show-left {
   height: 450px;
   padding: 1rem;
-  background-color: #514bca65;
+  background-color: #81d775;
   overflow: auto;
 }
 
 .show-middle {
   height: 450px;
-  background-color: #514bca65;
+  background-color: #81d775;
 }
 
 .show-right {
   height: 450px;
-  background-color: #514bca65;
+  background-color: #81d775;
 }
 
 .show-a {
@@ -259,8 +267,10 @@ a {
   padding: 0.5rem 0 0 1rem;
   margin: 0;
 }
+
 .climb-show-image {
   max-height: 100%;
+  border-radius: 0px 10px 10px 0px
 }
 
 .star-button {
@@ -299,12 +309,12 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #514bca65;
+  color: #81d775;
 }
 
 .area-climb-button {
   padding: 10px 20px 10px 20px;
-  background-color: #514bca;
+  background-color: #448b3a;
   border-radius: 20px;
   text-align: center;
   color: #fff;
@@ -317,7 +327,7 @@ textarea {
 }
 
 .area-climb-button:hover {
-  background-color: #7e7acb;
+  background-color: #2d5a26;
   color: #fff;
   transition:
     background-color 0.25s ease-out,
@@ -331,7 +341,7 @@ textarea {
 
 .climb-image {
   padding: 10px 20px 10px 20px;
-  background-color: #514bca;
+  background-color: #448b3a;
   border-radius: 20px;
   text-align: center;
   color: #fff;
@@ -344,7 +354,7 @@ textarea {
 }
 
 .climb-image:hover {
-  background-color: #7e7acb;
+  background-color: #2d5a26;
   color: #fff;
   transition:
     background-color 0.25s ease-out,
@@ -363,13 +373,16 @@ textarea {
 }
 
 .back-link:hover {
-  color: #514bca;
+  color: #448b3a;
 }
 
 .to-climbs-icon {
   background-color: transparent;
-  color: #000;
-  font-size: 50px;
+  color: #448b3a;
+  font-size: 72px;
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
   cursor: pointer;
   transition:
     background-color 0.5s ease-out,
@@ -377,8 +390,12 @@ textarea {
 }
 
 .to-climbs-icon:hover {
-  color: #8b88c765;
+  color: #2d5a26;
   transition:
     background-color 0.25s ease-out,
     color 0.25s ease-out;
+}
+
+.clear-bg {
+  background-color: transparent;
 }

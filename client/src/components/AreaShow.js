@@ -62,14 +62,14 @@ const AreaShow = (props) => {
   return (
     <div className="show-block">
     <div className="grid-x">
-      <div className="cell medium-6 large-4 hero-left-block overflow-block">
+      <div className="cell small-2 medium-4 large-4 hero-left-block overflow-block">
         <Link to="/areas" className="back-link">
           <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
             Back to area list
         </Link>
         { showNewClimb === 0 ? areaDetails : newClimbForm }
       </div>
-      <div className="cell medium-6 large-8 hero-right-block overflow-block">
+      <div className="cell small-2 medium-4 large-4 hero-right-block overflow-block">
         {climbsArray}
       </div>
     </div>
