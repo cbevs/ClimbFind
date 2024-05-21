@@ -1,4 +1,5 @@
 import express from "express"
+import cleanEditedUserInput from "../../../services/cleanEditedUserInput.js"
 import cleanUserInput from "../../../services/cleanUserInput.js"
 import Climb from "../../../models/Climb.js"
 import uploadImage from "../../../services/uploadImage.js"
@@ -7,7 +8,7 @@ import ClimbSerializer from "../../../serializers/ClimbSerializer.js"
 
 const areaClimbRouter = new express.Router({ mergeParams: true })
 
-areaClimbRouter.post("/", uploadImage.single("climbImage"), async (req, res) => {
+areaClimbRouter.post("/add-climb", uploadImage.single("climbImage"), async (req, res) => {
   const areaId = req.params.id
   try {
     const { body } = req

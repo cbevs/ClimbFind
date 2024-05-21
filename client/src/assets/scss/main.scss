@@ -269,7 +269,10 @@ a {
 }
 
 .climb-show-image {
-  max-height: 100%;
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  width: 100%;
   border-radius: 0px 10px 10px 0px
 }
 
@@ -398,4 +401,52 @@ textarea {
 
 .clear-bg {
   background-color: transparent;
+}
+
+#profile-link {
+  margin: 0;
+  padding: 0;
+}
+
+.profile-page-image {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+.ticklist-date {
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 0.5rem;
+}
+
+.no-user-error {
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.climbs-sent-text {
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.climb-show-buttons {
+  display: inline-block;
+  width: 30%;
+  margin: 0.5rem 0.5rem 0rem 0rem;
+}
+
+.delete-button {
+  background-color: #f64202;
+}
+
+.delete-button:hover {
+  background-color: #e34b15;
+}
+
+.confirm-delete {
+  color: #f64202;
+  font-weight: 900;
 }

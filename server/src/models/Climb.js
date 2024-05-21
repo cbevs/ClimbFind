@@ -13,18 +13,13 @@ class Climb extends Model {
       properties: {
         name: { type: "string", minLength: 1 },
         grade: { type: "string", minLength: 1, maxLength: 5 },
-        rating: { type: "integer" },
-        description: { type: "string", minLength: 1 },
         features: { type: "string", minLength: 1 },
-        directions: { type: "string", minLength: 1 },
-        latitude: { type: "number" },
-        longitude: { type: "number" }
       }
     }
   }
 
   static get relationMappings() {
-    const { Area, User } = require("./index.js")
+    const { Area, User, Ticklist } = require("./index.js")
     return {
       user: {
         relation: Model.BelongsToOneRelation,
@@ -40,6 +35,14 @@ class Climb extends Model {
         join: {
           from: "climbs.areaId",
           to: "areas.id"
+        }
+      },
+      ticklists: {
+        relation: Model.HasManyRelation,
+        modelClass: Ticklist,
+        join: {
+          from: "climbs.id",
+          to: "ticklists.climbId"
         }
       }
     }

@@ -1,10 +1,22 @@
 import express from "express";
 import { ValidationError } from "objection";
-
 import { User } from "../../../models/index.js";
 import uploadImage from "../../../services/uploadImage.js"
+import userTicklistRouter from "./userTicklistRouter.js";
 
 const usersRouter = new express.Router();
+
+usersRouter.use("/ticklists", userTicklistRouter)
+
+usersRouter.get("/:id", async (req, res) => {
+  const id = req.params.id
+  try {
+    const userData = await User.query().findById(id)
+    return res.status(200).json({ userData })
+  } catch(error) {
+    return res.status(500).json({ errors: error.message })
+  }
+})
 
 usersRouter.post("/", uploadImage.single("profileImage"), async (req, res) => {
   try {
