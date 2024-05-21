@@ -6,7 +6,7 @@ import ClimbSerializer from "../../../serializers/ClimbSerializer.js"
 
 const areasRouter = new express.Router()
 
-areasRouter.use("/:id/add-climb", areaClimbRouter)
+areasRouter.use("/:id", areaClimbRouter)
 
 areasRouter.get("/recents", async (req, res) => {
   try{

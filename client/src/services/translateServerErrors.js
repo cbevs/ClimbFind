@@ -11,6 +11,10 @@ const translateServerErrors = (errors) => {
     };
   }, {});
 
+  if(errorMessage.Grade === "must NOT have fewer than 1 characters") {
+    errorMessage.Grade = " is required!"
+  }
+
   if(errorMessage.Name === `[ 'name', 'location' ] already in use.` && errorMessage.Location === `[ 'name', 'location' ] already in use.`) {
     return { Name: "Name and location already exist in the database!"}
   }

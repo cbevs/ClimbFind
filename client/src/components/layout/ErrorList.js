@@ -9,7 +9,7 @@ const ErrorList = (props) => {
       index++;
       return (
         <li className="errors" key={index}>
-           {_.capitalize(props.errors[field])}
+           {field} {props.errors[field]}
         </li>
       );
     });
