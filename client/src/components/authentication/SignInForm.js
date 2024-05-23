@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 import config from "../../config";
 
 import FormError from "../layout/FormError";
@@ -106,6 +106,7 @@ const SignInForm = () => {
           <input type="submit" className="button" value="Sign In" />
         </div>
       </form>
+      <Link to="/users/new" className="no-format-link">Don't have an account? Click here to sign up!</Link>
     </div>
   );
 };
