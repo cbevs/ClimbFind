@@ -516,3 +516,32 @@ textarea {
   color: #9d9c9c;
   font-size: 32px;
 }
+
+.no-format-link {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  color: #000;
+  font-weight: inherit;
+}
+
+.no-format-link:hover {
+  color: #448b3a;
+}
+
+no-format-link:focus {
+  color: inherit;
+}
+
+.ticklist-p {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.submit-tick {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.2rem;
+}

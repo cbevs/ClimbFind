@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ErrorList from "./layout/ErrorList";
 import translateServerErrors from "../services/translateServerErrors";
-
+import { Link } from "react-router-dom";
 const TicklistForm = ({ changePane, climbId, user }) => {
   
   const [ticklist, setTicklist] = useState({
@@ -54,10 +54,10 @@ const TicklistForm = ({ changePane, climbId, user }) => {
     })
   }
 
-  const tickSubmitted = <>
-    <p>Climb Submitted!</p>
-    <a href={`/profile/${user.id}`}>Click here to view your ticklist</a>
-    </>
+  const tickSubmitted = <div className="submit-tick">
+    <p className="ticklist-p">Climb Submitted!</p>
+    <Link to={`/profile/${user.id}`} className="no-format-link">Click here to view your ticklist</Link>
+    </div>
 
   return (
     <>
@@ -77,6 +77,7 @@ const TicklistForm = ({ changePane, climbId, user }) => {
           <input
             type="date"
             name="date"
+            className="new-form-option"
             onChange={handleInputChange}
             value={ticklist.date}
             min="1930-01-01"

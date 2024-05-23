@@ -9,6 +9,7 @@ const locationAreaRouter = new express.Router({ mergeParams: true })
 locationAreaRouter.post("/", async (req,res) => {
   const body = cleanUserInput(req.body)
   const locationId = parseInt(req.params.id)
+
   try {
     if(!body.name) {
       const missingName = [{message: "Name is a required property", keyword: 'required' }]

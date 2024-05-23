@@ -47,9 +47,15 @@ const App = (props) => {
           <ClimbShow user={currentUser} />
         </Route>
         <Route exact path="/areas" component={AreaList} />
-        <Route exact path="/areas/:id" component={AreaShow} />
-        <Route exact path="/locations" component={LocationList} />
-        <Route exact path="/locations/:id" component={LocationShow} />
+        <Route exact path="/areas/:id">
+          <AreaShow user={currentUser} />
+        </Route>
+        <Route exact path="/locations">
+          <LocationList user={currentUser} />
+        </Route>
+        <Route exact path="/locations/:id">
+          <LocationShow user={currentUser} />
+        </Route>
         <AuthenticatedRoute exact path="/profile/:id" component={UserProfile} user={currentUser} />
       </Switch>
       <BottomBar />
