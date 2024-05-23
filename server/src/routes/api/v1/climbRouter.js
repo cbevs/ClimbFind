@@ -65,9 +65,10 @@ climbRouter.patch("/:id/edit", uploadImage.single("climbImage"), async (req, res
         climbImage: req.file.location,
       }
     }
-
+   
     const cleanedInput = cleanEditedUserInput(data)
     cleanedInput.userId = parseInt(req.user.id)
+  
     const updatedClimb = await Climb.query().patchAndFetchById(climbId, cleanedInput)
     const serializedClimb = await ClimbSerializer.getClimbInfo(updatedClimb)
     return res.status(200).json({ updatedClimb: serializedClimb })

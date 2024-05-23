@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const AreaList = () => {
   const [areas, setAreas] = useState([])
-
   const getAreas = async () => {
     try {
       const response = await fetch("/api/v1/areas/recents")
@@ -27,6 +26,8 @@ const AreaList = () => {
   const areaArray = areas.map(area => {
     return <AreaTile key={area.id} area={area} />
   })
+
+
 
   return (
     <div className="show-block">

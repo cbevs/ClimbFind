@@ -10,8 +10,8 @@ exports.up = async (knex) => {
     table.bigIncrements("id")
     table.string("name").notNullable()
     table.text("description")
-    table.decimal("latitude")
-    table.decimal("longitude")
+    table.string("latitude")
+    table.string("longitude")
     table.bigInteger("userId").notNullable().unsigned().index().references("users.id")
     table.bigInteger("locationId").notNullable().unsigned().index().references("locations.id")
     table.timestamp("createdAt").notNullable().defaultTo(knex.fn.now());

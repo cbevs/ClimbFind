@@ -1,7 +1,5 @@
 const getFeaturesList = (featureList) => {
-   
     const featuresArray = featureList.split(" ")
-    console.log(featuresArray)
     if (featuresArray.length === 1) {
       const formattedFeatures = `This climb features ${featureList}`
       return formattedFeatures

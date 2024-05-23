@@ -20,7 +20,7 @@ class LocationSerializer {
     serializedLocation.areas = await Promise.all(areas.map(async area => {
       return await AreaSerializer.getBasicAreaInfo(area)
     }))
-
+    
     return serializedLocation
   }
 }
