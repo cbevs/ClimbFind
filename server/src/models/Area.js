@@ -11,8 +11,8 @@ class Area extends Model {
       required: ["name", "userId", "locationId"],
       properties: {
         name: { type: "string", minLength: 1},
-        latitude: { type: "number" },
-        longitude: { type: "number" }
+        latitude: { type: "string" },
+        longitude: { type: "string" }
       }
     }
   }

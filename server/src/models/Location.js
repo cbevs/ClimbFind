@@ -18,8 +18,8 @@ class Location extends unique(Model) {
       properties: {
         name: { type: "string" },
         location: { type: "string" },
-        latitude: { type: "number" },
-        longitude: { type: "number" }
+        latitude: { type: "string" },
+        longitude: { type: "string" }
       }
     }
   }

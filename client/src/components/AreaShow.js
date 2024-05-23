@@ -3,12 +3,23 @@ import { Link } from "react-router-dom";
 import ClimbTile from "./ClimbTile";
 import ClimbForm from "./ClimbForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import AddCoordinates from "./AddCoordinates";
+import _ from "lodash"
+import WeatherPane from "./WeatherPane";
+import mapLoader from "../services/mapLoader";
 
 const AreaShow = (props) => {
 
   const [area, setArea] = useState({})
   const [showNewClimb, setShowNewClimb] = useState(0)
-  let climbsArray
+  const [showClimbData, setShowClimbData] = useState(0)
+  const [leftRadiusClass, setLeftRadiusClass] = useState("left-radius")
+  const [rightRadiusClass, setrightRadiusClass] = useState("right-radius")
+  let climbList
+  let climbDataArea
+  let expandArrow
+  let weatherPane
+
   const getArea = async () => {
     const areaId = props.match.params.id
     try {
@@ -25,9 +36,17 @@ const AreaShow = (props) => {
   }
   
   if(Object.keys(area).length !== 0){
-     climbsArray = area.climbs.map(climb => {
-      return <ClimbTile key={climb.id} climb={climb} />
-    })
+    if(area.climbs.length !== 0) {
+      climbList = area.climbs.map(climb => {
+        return <ClimbTile key={climb.id} climb={climb} />
+      })
+    } else {
+      climbList = <div className="no-items-found"><p>No Climbs!</p></div>
+    }  
+  }
+
+  if(area.latitude && area.longitude && showClimbData > 0) {
+    mapLoader(area.latitude, area.longitude)
   }
 
   const showNewClimbForm = () => {
@@ -36,6 +55,27 @@ const AreaShow = (props) => {
     } else {
       setShowNewClimb(1)
     }
+  }
+
+  const showClimbDataPane = () => {
+    if (showClimbData === 1) {
+      setShowClimbData(0)
+      setLeftRadiusClass("left-radius")
+      setrightRadiusClass("right-radius")
+    } else {
+      setLeftRadiusClass("")
+      setrightRadiusClass("")
+      setShowClimbData(1)
+    }
+  }
+
+  if(area.weather) {
+    weatherPane = <WeatherPane weatherData={area.weather} name={area.name} />
+  } else {
+    weatherPane = <>
+      <p className="coordinates-p">Have the coordinates? Add them below!</p>
+      <AddCoordinates area={area} setArea={setArea} />
+    </>
   }
 
   const areaDetails = 
@@ -54,6 +94,29 @@ const AreaShow = (props) => {
       areaId={area.id} 
     />
 
+  const climbData = <div className="grid-x">
+    <div className="cell small-2 medium-4 large-4">
+      <div id="map" className="map-block"></div>
+    </div>
+      
+    <div className="cell small-2 medium-4 large-4 weather-block overflow-block">
+      {weatherPane}
+    </div>
+  </div> 
+
+  if (showClimbData === 1) {
+    climbDataArea = climbData
+    expandArrow = <>
+      <FontAwesomeIcon icon="fa-solid fa-angles-up" />
+      <p className="climb-arrow-p">Hide map & weather</p>
+    </>
+  } else {
+    climbDataArea = null
+    expandArrow = <>
+      <FontAwesomeIcon icon="fa-solid fa-angles-down" />
+      <p className="climb-arrow-p">Show map & weather</p>
+    </>
+  }
   
   useEffect(() => {
     getArea()
@@ -62,17 +125,22 @@ const AreaShow = (props) => {
   return (
     <div className="show-block">
     <div className="grid-x">
-      <div className="cell small-2 medium-4 large-4 hero-left-block overflow-block">
+      <div className={`cell small-2 medium-4 large-4 hero-left-block overflow-block ${leftRadiusClass}`}>
         <Link to="/areas" className="back-link">
           <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
             Back to area list
         </Link>
         { showNewClimb === 0 ? areaDetails : newClimbForm }
+        <span className="climb-arrow" onClick={showClimbDataPane}>
+          {expandArrow} 
+        </span>
       </div>
-      <div className="cell small-2 medium-4 large-4 hero-right-block overflow-block">
-        {climbsArray}
+      <div className={`cell small-2 medium-4 large-4 hero-right-block overflow-block ${rightRadiusClass}`}>
+        {climbList}
       </div>
+      
     </div>
+    {climbDataArea}
   </div>
   )
 }

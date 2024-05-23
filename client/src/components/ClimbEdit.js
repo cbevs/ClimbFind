@@ -15,8 +15,6 @@ const ClimbEdit = ({ changePaneEdit, climb, setClimb, setParentFeatures }) => {
     rating: 0,
     description: "",
     directions: "",
-    latitude: "",
-    longitude: "",
     climbImage: {},
   });
 
@@ -27,7 +25,7 @@ const ClimbEdit = ({ changePaneEdit, climb, setClimb, setParentFeatures }) => {
   const featureOptions = getFeatures()
 
   const setInitialClimb = () => {
-    const attributes = ["name", "grade", "rating", "description", "directions", "latitude", "longitude", "climbImage"]
+    const attributes = ["name", "grade", "rating", "description", "directions", "climbImage"]
     const filteredClimb = {}
     for (const attribute of attributes) {
       if (climb[attribute] === null) {
@@ -98,8 +96,6 @@ const ClimbEdit = ({ changePaneEdit, climb, setClimb, setParentFeatures }) => {
       rating: 0,
       description: "",
       directions: "",
-      latitude: "",
-      longitude: "",
       climbImage: {}
     });
     setFeatures([])
@@ -115,8 +111,6 @@ const ClimbEdit = ({ changePaneEdit, climb, setClimb, setParentFeatures }) => {
     newClimbBody.append("rating", newClimb.rating)
     newClimbBody.append("description", newClimb.description)
     newClimbBody.append("directions", newClimb.directions)
-    newClimbBody.append("latitude", newClimb.latitude)
-    newClimbBody.append("longitude", newClimb.longitude)
     newClimbBody.append("climbImage", newClimb.climbImage)
 
     if (features.join(" ") !== existingFeatures && features.length !== 0) {

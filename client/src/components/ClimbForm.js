@@ -12,8 +12,6 @@ const ClimbForm = ({ showNewClimbForm, setArea, area, areaId }) => {
     rating: 0,
     description: "",
     directions: "",
-    latitude: "",
-    longitude: "",
     climbImage: {}
   });
 
@@ -76,8 +74,6 @@ const ClimbForm = ({ showNewClimbForm, setArea, area, areaId }) => {
       rating: 0,
       description: "",
       directions: "",
-      latitude: "",
-      longitude: "",
       climbImage: {}
     });
     setFeatures([])
@@ -93,8 +89,6 @@ const ClimbForm = ({ showNewClimbForm, setArea, area, areaId }) => {
     newClimbBody.append("rating", newClimb.rating)
     newClimbBody.append("description", newClimb.description)
     newClimbBody.append("directions", newClimb.directions)
-    newClimbBody.append("latitude", newClimb.latitude)
-    newClimbBody.append("longitude", newClimb.longitude)
     newClimbBody.append("features", features.join(" "))
     newClimbBody.append("climbImage", newClimb.climbImage)
 

@@ -9,18 +9,6 @@ const cleanEditedUserInput = (formInput) => {
       }
     }
     
-    if (field === "latitude") {
-      formInput.latitude = Number(formInput.latitude)
-      if (formInput[field] === 0 || isNaN(formInput[field])){
-        delete formInput[field]
-      }
-    }
-    if (field === "longitude") {
-      formInput.longitude = Number(formInput.longitude)
-      if (formInput[field] === 0 || isNaN(formInput[field])){
-        delete formInput[field]
-      }
-    } 
     if (field === "climbId") {
       formInput.climbId = parseInt(formInput.climbId)
       if (formInput[field] === 0 || isNaN(formInput[field])){

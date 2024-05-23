@@ -15,7 +15,6 @@ userTicklistRouter.get("/", async (req ,res) => {
 })
 
 userTicklistRouter.get("/:id", async (req, res) => {
-  console.log(req.params)
   const id = req.params.id
   try {
     const ticklist = await Ticklist.query().where("userId", id)

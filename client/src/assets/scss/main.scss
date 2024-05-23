@@ -108,13 +108,13 @@ a {
   height: 450px;
   padding: 1rem;
   background-color: #81d775;
-  border-radius: 10px 0px 0px 10px;
+  border-radius: 10px 0px 0px 0px;
 }
 
 .hero-right-block {
   height: 450px;
   background-color: #e9e9e9;
-  border-radius: 0px 10px 10px 0px;
+  border-radius: 0px 10px 0px 0px;
 }
 
 .register-form-error {
@@ -224,9 +224,8 @@ a {
 
 .show-block {
   background-color: #ffffffb2;
-  height: 500px;
   width: 90%;
-  margin: 1rem auto 0 auto;
+  margin: 1rem auto 2rem auto;
   padding: 1.5rem;
 }
 
@@ -449,4 +448,71 @@ textarea {
 .confirm-delete {
   color: #f64202;
   font-weight: 900;
+}
+
+.weather-block {
+  height: 300px;
+  background-color: #e9e9e9;
+  border-radius: 0px 0px 10px 0px;
+}
+
+.map-block {
+  height: 300px;
+  background-color: #e9e9e9;
+  border-radius: 0px 0px 0px 10px;
+}
+
+.coordinates-form {
+  width: 60%;
+  padding-left: 2rem;
+}
+
+.climb-arrow {
+  padding-left: 1rem;
+  width: 50%;
+  display: block;
+}
+
+.climb-arrow:hover {
+  cursor: pointer;
+}
+
+.climb-arrow-p {
+  display: inline-block;
+}
+
+.coordinates-p {
+  margin: 0;
+  padding-left: 2rem;
+}
+
+.weather-block {
+  padding-left: 1rem;
+}
+
+.weather-block p{
+  margin: 0;
+  padding: 0;
+}
+
+.left-radius {
+  border-bottom-left-radius: 10px;
+}
+
+.right-radius {
+  border-bottom-right-radius: 10px;
+}
+
+.no-items-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.no-items-found p {
+  font-weight: 700;
+  color: #9d9c9c;
+  font-size: 32px;
 }
