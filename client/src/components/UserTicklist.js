@@ -22,7 +22,7 @@ const UserTicklist = ({ user }) => {
   }
 
   const tickListArray = ticklist.map(tick => {
-    return <TicklistTile key={tick.id} tick={tick} />
+    return <TicklistTile key={tick.id} tick={tick} currentUserId={user.id} profileUserId={id} ticklist={ticklist} setTicklist={setTicklist} />
   })
 
   useEffect(() => {

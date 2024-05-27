@@ -17,7 +17,6 @@ const cleanUserInput = (formInput) => {
         delete formInput[field]
       }
     }
-
   })
 
   return formInput
