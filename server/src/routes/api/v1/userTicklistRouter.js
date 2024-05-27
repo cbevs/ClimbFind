@@ -41,4 +41,29 @@ userTicklistRouter.post("/", async (req, res) => {
   }
 })
 
+userTicklistRouter.patch("/", async (req, res) => {
+  const { notes, date, tickId } = req.body
+  const editedTickObject = { date, notes }
+  try {
+    const response = await Ticklist.query().patchAndFetchById(tickId, editedTickObject)
+    const updatedTick = await TicklistSerializer.getTickWithClimbName(response)
+    return res.status(200).json({ ticklist: updatedTick })
+  } catch(error) {
+    if (error instanceof ValidationError) {
+      return res.status(422).json({ errors: error.data })
+    }
+    return res.status(500).json({ errors: error.message })
+  }
+})
+
+userTicklistRouter.delete("/", async (req, res) => {
+  const { tickId } = req.body
+  try {
+    const deletedTick = await Ticklist.query().deleteById(tickId)
+    return res.status(200).json({ tickDeleted: deletedTick })
+  } catch(error) {
+    return res.status(500).json({ errors: error.message })
+  }
+})
+
 export default userTicklistRouter

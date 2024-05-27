@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useParams } from "react-router-dom";
 import UserTicklist from "./UserTicklist";
+import ImageUpdate from "./ImageUpdate";
 
 const UserProfile = ({ user }) => {
   const [userProfile, setUserProfile] = useState({})
+  const [showImageUpdate, setShowImageUpdate] = useState(0)
   const { id } = useParams()
   let display
+  let imagePane
 
   const getUserProfile = async () => {
     try{
@@ -24,6 +27,22 @@ const UserProfile = ({ user }) => {
     }
   }
 
+  const changePane = () => {
+    if (showImageUpdate === 0) {
+      setShowImageUpdate(1)
+    } else {
+      setShowImageUpdate(0)
+    }
+  }
+
+  if (showImageUpdate === 0 && user.id === userProfile.id) {
+    imagePane = <FontAwesomeIcon icon="fa-solid fa-camera"  title="Update Photo"  className="edit-image-icon" onClick={changePane} />
+  } else if (showImageUpdate === 1 && user.id === userProfile.id) {
+    imagePane = <ImageUpdate changePane={changePane} setUserProfile={setUserProfile} userProfile={userProfile} />
+  } else {
+    imagePane = null
+  }
+
   useEffect(() => {
     getUserProfile()
   }, [])
@@ -36,16 +55,17 @@ const UserProfile = ({ user }) => {
   } else {
     display = <div className="show-block">
       <div className="grid-x">
-      <div className="cell small-2 medium-4 large-4 hero-left-block overflow-block">
+      <div className="cell small-2 medium-4 large-4 hero-left-block overflow-block left-radius">
       <FontAwesomeIcon icon="fa-regular fa-hand-peace" className="large-text" />
       { user.id === userProfile.id 
         ? <h2>You're looking pretty good, {user.username}! </h2> 
-          : <h2>{userProfile.username} looks pretty good, don't they?</h2> }
+        : <h2>{userProfile.username} looks pretty good, don't they?</h2> }
       <p className="climbs-sent-text">Climbs {userProfile.username} has sent</p>
       <UserTicklist user={userProfile} />
       </div>
-      <div className="cell small-2 medium-4 large-4 hero-right-block overflow-block">
-        <img src={userProfile.profileImage} className="profile-page-image" alt="profile-picture"></img>
+      <div className="cell small-2 medium-4 large-4 hero-right-block overflow-block relative right-radius">
+        <img src={userProfile.profileImage} className="profile-page-image"           alt="profile-picture"></img>
+        {imagePane}
       </div>
       </div>
     </div>

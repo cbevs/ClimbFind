@@ -38,9 +38,33 @@ usersRouter.post("/", uploadImage.single("profileImage"), async (req, res) => {
       return res.status(201).json({ user: persistedUser });
     });
   } catch (error) {
+    console.log(error)
     if (error instanceof ValidationError) {
       return res.status(422).json({ errors: error.data });
     }
+    return res.status(500).json({ error: error.message });
+  }
+});
+
+usersRouter.patch("/profile-image", uploadImage.single("profileImage"), async (req, res) => {
+  const userId = req.user.id
+  try {
+    const { body } = req
+    let data
+    if (!req.file) {
+      data = {
+        ...body,
+        profileImage: undefined
+      }
+    } else {
+      data = {
+        ...body,
+        profileImage: req.file.location
+      }
+    }
+    const updatedUser = await User.query().patchAndFetchById(userId, data)
+    return res.status(201).json({ user: updatedUser })
+  } catch (error) {
     return res.status(500).json({ error: error.message });
   }
 });

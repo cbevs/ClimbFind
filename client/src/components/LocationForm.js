@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import ErrorList from "./layout/ErrorList"
 import translateServerErrors from "../services/translateServerErrors"

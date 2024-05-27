@@ -108,14 +108,14 @@ const ClimbShow = (props) => {
   return (
     <div className="show-block">
       <div className="grid-x">
-        <div className="cell small-2 medium-4 large-4 hero-left-block overflow-block">
+        <div className="cell small-2 medium-4 large-4 hero-left-block overflow-block left-radius">
           <Link to={`/areas/${climb.areaId}`} className="back-link">
             <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
             Click me to go to this climb's area!
           </Link>
           {pane}
         </div>
-        <div className="cell small-2 medium-4 large-4 hero-right-block clear-bg">
+        <div className="cell small-2 medium-4 large-4 hero-right-block clear-bg right-radius">
           <img
             src={climb.climbImage}
             className="climb-show-image"
