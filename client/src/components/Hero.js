@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import HeroImage from "./HeroImage";
 
 const Hero = (props) => {
  
@@ -13,7 +14,9 @@ const Hero = (props) => {
             <FontAwesomeIcon icon="fa-solid fa-circle-arrow-right" />
           </Link>
         </div>
-        <div className="cell small-2 medium-4 large-6 hero-right-block right-radius"></div>
+        <div className="cell small-2 medium-4 large-6 hero-right-block right-radius">
+          <HeroImage />
+        </div>
       </div>
     </div>
   )
