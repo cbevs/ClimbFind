@@ -9,8 +9,7 @@ const HeroImage = () => {
     <> 
       <img className="front-page-image" src="https://climb-project-production.s3.us-east-2.amazonaws.com/IMG_0215.jpeg" alt="Rock climb The Roots V5"></img>
       <p className="hero-image-text">The Roots V5 - Smugglers Notch</p>
-    </>
-   ,
+    </>,
     <> 
       <img className="front-page-image" src="https://climb-project-production.s3.us-east-2.amazonaws.com/IMG_0459.jpeg" alt="Rock climb Lynn Hill Traverse V8"></img>
       <p className="hero-image-text">Lynn Hill Traverse V8 - The Shawangunks</p>
