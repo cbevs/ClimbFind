@@ -122,11 +122,11 @@ const AreaShow = (props) => {
 
   const climbData = (
     <div className="grid-x">
-      <div className="cell small-2 medium-4 large-4">
+      <div className="cell small-12 medium-4 large-4">
         <div id="map" className="map-block"></div>
       </div>
 
-      <div className="cell small-2 medium-4 large-4 weather-block overflow-block">
+      <div className="cell small-12 medium-4 large-4 weather-block overflow-block">
         {weatherPane}
       </div>
     </div>
@@ -158,7 +158,7 @@ const AreaShow = (props) => {
     <div className="show-block">
       <div className="grid-x">
         <div
-          className={`cell small-2 medium-4 large-4 hero-left-block overflow-block ${leftRadiusClass}`}
+          className={`cell small-12 medium-4 large-4 hero-left-block overflow-block ${leftRadiusClass}`}
         >
           <Link to="/areas" className="back-link">
             <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
@@ -170,7 +170,7 @@ const AreaShow = (props) => {
           </span>
         </div>
         <div
-          className={`cell small-2 medium-4 large-4 hero-right-block overflow-block ${rightRadiusClass}`}
+          className={`cell small-12 medium-4 large-4 hero-right-block overflow-block ${rightRadiusClass}`}
         >
           {climbList}
         </div>

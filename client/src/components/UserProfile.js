@@ -55,7 +55,7 @@ const UserProfile = ({ user }) => {
   } else {
     display = <div className="show-block">
       <div className="grid-x">
-      <div className="cell small-2 medium-4 large-4 hero-left-block overflow-block left-radius">
+      <div className="cell small-12 medium-4 large-4 hero-left-block overflow-block left-radius">
       <FontAwesomeIcon icon="fa-regular fa-hand-peace" className="large-text" />
       { user.id === userProfile.id 
         ? <h2>You're looking pretty good, {user.username}! </h2> 
@@ -63,7 +63,7 @@ const UserProfile = ({ user }) => {
       <p className="climbs-sent-text">Climbs {userProfile.username} has sent</p>
       <UserTicklist user={userProfile} />
       </div>
-      <div className="cell small-2 medium-4 large-4 hero-right-block overflow-block relative right-radius">
+      <div className="cell small-12 medium-4 large-4 hero-right-block overflow-block relative right-radius">
         <img src={userProfile.profileImage} className="profile-page-image"           alt="profile-picture"></img>
         {imagePane}
       </div>
