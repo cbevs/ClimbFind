@@ -4,7 +4,6 @@ class UserSeeder {
   static async seed() {
     const userData = [
       {
-        id: 2,
         email: "admin@boulderbuddy.com",
         password: "boulderBuddy2024",
         username: "bb admin"
