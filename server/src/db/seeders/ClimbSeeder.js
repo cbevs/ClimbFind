@@ -18,7 +18,7 @@ class ClimbSeeder {
         name: "Suzie A",
         grade: "V1",
         description: "Start with hands on the thin horizontal holds a few feet up on the left face. Climb directly upwards. A classic!",
-        features: "crimps"
+        features: "crimps",
         userId: 1,
         areaId: 2
       },

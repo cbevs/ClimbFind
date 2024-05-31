@@ -10,7 +10,7 @@ class AreaSeeder {
         latitude: "41.735031",
         longitude: "-74.192996",
         userId: 1,
-        locationId: 2
+        locationId: 1
       },
       {
         name: "Carriage Road",
@@ -18,7 +18,7 @@ class AreaSeeder {
         longitude: "41.737187",
         latitude: "-74.187932",
         userId: 1,
-        locationId: 2
+        locationId: 1
       },
       {
         name: "Great Slab / Wave",
@@ -26,7 +26,7 @@ class AreaSeeder {
         latitude: "41.8959",
         longitude: "-71.4337",
         userId: 1,
-        locationId: 3
+        locationId: 2
       },
       {
         name: "Pond Cave",
@@ -34,7 +34,7 @@ class AreaSeeder {
         latitude: "41.9053",
         longitude: "-71.4356",
         userId: 1,
-        locationId: 3
+        locationId: 2
       },
       {
         name: "Stone Tower Area",
@@ -42,7 +42,7 @@ class AreaSeeder {
         latitude: "42.4899",
         longitude: "-70.98564",
         userId: 1,
-        locationId: 4
+        locationId: 3
       },
       {
         name: "Mt. Spickett / Goliath Rock",
@@ -50,7 +50,7 @@ class AreaSeeder {
         latitude: "42.4962",
         longitude:  "-70.98063",
         userId: 1,
-        locationId: 4
+        locationId: 3
       },
       {
         name: "Gate",
@@ -58,7 +58,7 @@ class AreaSeeder {
         latitude: "43.193293",
         longitude: "-74.5433",
         userId: 1,
-        locationId: 5
+        locationId: 4
       },
       {
         name: "Wall",
@@ -66,7 +66,7 @@ class AreaSeeder {
         latitude: "43.193426",
         longitude: "-74.543337",
         userId: 1,
-        locationId: 5
+        locationId: 4
       },
       {
         name: "The Cave",
@@ -74,7 +74,7 @@ class AreaSeeder {
         latitude: "43.69543",
         longitude: "-74.35048",
         userId: 1,
-        locationId: 6
+        locationId: 5
       }
     ]
 
