@@ -5,7 +5,6 @@ import ClimbForm from "./ClimbForm"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useParams } from "react-router-dom"
 import AddCoordinates from "./AddCoordinates"
-import _ from "lodash"
 import WeatherPane from "./WeatherPane"
 import mapLoader from "../services/mapLoader"
 

@@ -26,6 +26,7 @@ const ClimbTile = ({ climb }) => {
         <li className="menu-text">{climb.grade}</li>
         { climb.rating ? <li className="menu-text">{stars}</li> : <li>No rating</li> }
       </ul>
+      <hr className="hr-hidden"/>
     </>
   )
 }

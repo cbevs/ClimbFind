@@ -35,7 +35,7 @@ body {
   color: #419c34;
   margin: 0;
   padding: 0;
-  font-size: 10px;
+  font-size: 0.6rem;
 }
 
 .top-bar {
@@ -99,7 +99,7 @@ a {
 .hero-block {
   background-color: #ffffffb2;
   height: 500px;
-  width: 60%;
+  width: 90%;
   margin: 1rem auto 0 auto;
   padding: 1.5rem;
 }
@@ -156,6 +156,7 @@ a {
 .user-image {
   height: 40px;
   width: 40px;
+  object-fit: cover;
   border-radius: 50%;
   margin-right: 1rem;
 }
@@ -197,11 +198,11 @@ a {
 }
 
 .large-text {
-  font-size: 20px;
+  font-size: 1.2rem;
 }
 
 .area-small-text {
-  font-size: 18px;
+  font-size: 1.1rem;
 }
 
 .climb-tile-pad-left {
@@ -257,7 +258,7 @@ a {
 
 .features-p {
   padding: 0.5rem 0 0 1rem;
-  font-size: 14px;
+  font-size: 0.9rem;
   font-style: italic;
   margin: 0;
 }
@@ -381,7 +382,7 @@ textarea {
 .to-climbs-icon {
   background-color: transparent;
   color: #448b3a;
-  font-size: 72px;
+  font-size: 5rem;
   display: flex;
   justify-content: center;
   padding-top: 5rem;
@@ -416,7 +417,7 @@ textarea {
 
 .ticklist-date {
   font-style: italic;
-  font-size: 14px;
+  font-size: 0.85rem;
   margin-bottom: 0.5rem;
 }
 
@@ -514,7 +515,7 @@ textarea {
 .no-items-found p {
   font-weight: 700;
   color: #9d9c9c;
-  font-size: 32px;
+  font-size: 2rem;
 }
 
 .no-format-link {
@@ -687,14 +688,49 @@ no-format-link:focus {
   background-color: #bcbcbc91;
 }
 
+.hold-segment {
+  font-weight: 700;
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.hold-link {
+  text-decoration: underline;
+}
+
+.hr-hidden {
+  display: none;
+}
+
+.location-sign-in {
+  padding-left: 0.2rem;
+}
+
+.features-list {
+  list-style-type: none;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
 @media screen and (max-width: 575px) {
     .hero-left-block {
       border-radius: 10px 10px 0px 0px;
     }
     .hero-right-block {
       border-radius: 0px 0px 10px 10px;
+      margin-bottom: 5rem;
     }
     .front-page-image {
       border-radius: 0px 0px 10px 10px;
+    }
+    .climb-tile {
+      margin: 0.2rem 0rem 0rem 1rem;
+      display: block;
+    }
+    .hr-hidden {
+      display: block;
+    }
+    .tick-hr {
+      border: 1px solid #448b3a;
     }
 }

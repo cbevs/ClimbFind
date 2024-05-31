@@ -68,6 +68,7 @@ const TicklistTile = ({ tick, currentUserId, profileUserId, ticklist, setTicklis
         {editDeletePane}
         <p className="ticklist-date">Sent on {date}</p>
         <p>{tick.notes}</p>
+        <hr className="hr-hidden tick-hr"/>
       </>
     )
   } else {

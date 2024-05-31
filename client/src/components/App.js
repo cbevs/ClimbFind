@@ -19,6 +19,7 @@ import AreaList from "./AreaList";
 import LocationList from "./LocationList";
 import LocationShow from "./LocationShow";
 import UserProfile from "./UserProfile";
+import getFeatureRoutes from "./featurePages/featureRoutes";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -34,6 +35,8 @@ const App = (props) => {
   useEffect(() => {
     fetchCurrentUser();
   }, []);
+
+  const featureRoutesList = getFeatureRoutes()
 
   return (
     <Router>
@@ -57,6 +60,7 @@ const App = (props) => {
           <LocationShow user={currentUser} />
         </Route>
         <AuthenticatedRoute exact path="/profile/:id" component={UserProfile} user={currentUser} />
+        {featureRoutesList}
       </Switch>
       <BottomBar />
     </Router>
