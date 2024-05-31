@@ -1,5 +1,4 @@
 import React from "react";
-import _ from "lodash";
 
 const ErrorList = (props) => {
   const errantFields = Object.keys(props.errors);

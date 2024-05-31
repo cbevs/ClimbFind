@@ -15,6 +15,7 @@ const AreaTile = ({ area }) => {
       <ul className="climb-tile climb-tile-pad-left">
         <li className="menu-text">{area.climbCount} { area.climbCount === "0" || area.climbCount > 1 ? "climbs" : "climb" }</li>
       </ul>
+      <hr className="hr-hidden"/>
     </>
   )
 }

@@ -76,8 +76,8 @@ const LocationList = (props) => {
       <>
         <h2 className="hero-h2">Here are the locations we have in our database!</h2>
         <p>
-          Don't see the location you're looking for?{" "}
-          <Link to="/user-sessions/new" className="no-format-link">Sign in to add it!</Link>
+          Don't see the location you're looking for?
+          <Link to="/user-sessions/new" className="no-format-link location-sign-in">Sign in to add it!</Link>
         </p>
         <p onClick={showSearchForm} className="area-climb-button">
           Search for a location
@@ -85,7 +85,7 @@ const LocationList = (props) => {
       </>
     )
   }
-
+  
   const newLocationForm = (
     <LocationForm
       showNewLocationForm={showNewLocationForm}

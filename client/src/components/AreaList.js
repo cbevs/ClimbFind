@@ -32,14 +32,14 @@ const AreaList = () => {
   return (
     <div className="show-block">
       <div className="grid-x">
-        <div className="cell small-12 medium-4 large-4 hero-left-block overflow-block">
+        <div className="cell small-12 medium-4 large-4 hero-left-block overflow-block left-radius">
         <Link to="/" className="back-link">
           <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
             Back to homepage
         </Link>
         <h2 className="hero-h2">Here are the latest areas in our database!</h2>
         </div>
-        <div className="cell small-12 medium-4 large-4 hero-right-block overflow-block">
+        <div className="cell small-12 medium-4 large-4 hero-right-block overflow-block right-radius">
           {areaArray}
         </div>
       </div>

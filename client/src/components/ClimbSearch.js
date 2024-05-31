@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import getFeatures from "../services/getFeatures"
+import climbSearchFunction from "../services/climbSearchFunction"
 
 const ClimbSearch = ({ setClimbs }) => {
 
@@ -8,24 +9,15 @@ const ClimbSearch = ({ setClimbs }) => {
 
   const onSubmitHandler = async (event) => {
     event.preventDefault();
-    try{
-      const response = await fetch("/api/v1/climbs/search", {
-        method: "POST",
-        headers: new Headers({ "Content-Type": "application/json" }),
-        body: JSON.stringify(features)
-      })
-      const responseBody = await response.json()
-      setClimbs(responseBody.climbs)
-    } catch(error) {
-      console.error(error)
-    }
+    const climbData = await climbSearchFunction(features)
+    setClimbs(climbData)
   }
 
   const selectInputChange = (event) => {
-    const options = [...event.target.selectedOptions];
-    const values = options.map((option) => option.value);
+    const options = [...event.target.selectedOptions]
+    const values = options.map((option) => option.value)
     setFeatures(values)
-  };
+  }
 
   return (
     <form className="new-climb-form" onSubmit={onSubmitHandler}>

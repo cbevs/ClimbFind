@@ -57,7 +57,7 @@ class LocationSeeder {
         location: "Greater Chattanooga Area, TN",
         description: "The Chattanooga Area of Tennessee holds a lifetime amount of climbing. One could stay here their whole life and still not complete all of the climbs this location has to offer. The most famous area here by far is Stone Fort (AKA Little Rock City). The sandstone here leaves nothing to be desired. It gives and it takes away. One day you'll climb V10 and the next you'll be sliding off of a V2 sloper problem. Get your sloper game ready for the south!",
         latitude: "35.0458",
-        longitude: "85.3094",
+        longitude: "-85.3094",
         userId: 1
       }
     ]
