@@ -12,7 +12,7 @@ const UpdatePassword = (props) => {
 
   const verifyUser = async () => {
     try {
-      const response = await fetch(`api/v1/users/reset-password/${id}/${token}`)
+      const response = await fetch(`/api/v1/users/reset-password/${id}/${token}`)
       const responseBody = await response.json()
       if (!response.ok) {
         if (response.status === 404) {
