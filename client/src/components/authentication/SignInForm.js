@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import config from "../../config";
-
+import ForgotPassword from "./ForgotPassword";
 import FormError from "../layout/FormError";
 
 const SignInForm = () => {
@@ -107,6 +107,7 @@ const SignInForm = () => {
         </div>
       </form>
       <Link to="/users/new" className="no-format-link">Don't have an account? Click here to sign up!</Link>
+      <Link to="/users/forgot-password" className="no-format-link forgot-password-link">Forgot Password?</Link>
     </div>
   );
 };

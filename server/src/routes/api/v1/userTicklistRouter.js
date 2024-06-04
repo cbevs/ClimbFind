@@ -34,6 +34,7 @@ userTicklistRouter.post("/", async (req, res) => {
     const response = await Ticklist.query().insertAndFetch(cleanedBody)
     return res.status(200).json({ ticklist: response })
   } catch(error) {
+    console.log(error)
     if (error instanceof ValidationError) {
       return res.status(422).json({ errors: error.data })
     }

@@ -504,6 +504,34 @@ textarea {
   border-bottom-right-radius: 10px;
 }
 
+.forgot-password-link {
+  display: block;
+}
+
+.reset-password-errors {
+  width: 80%;
+  padding: 5rem;
+  margin: 5rem auto;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #448b3a9c;
+}
+
+.password-no-match {
+  padding: 1rem;
+}
+
+.password-icon {
+  position: absolute;
+  top: 0.9rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.password-icon:hover {
+  color: #448b3a;
+}
+
 .no-items-found {
   display: flex;
   align-items: center;

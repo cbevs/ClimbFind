@@ -20,6 +20,8 @@ import LocationList from "./LocationList";
 import LocationShow from "./LocationShow";
 import UserProfile from "./UserProfile";
 import getFeatureRoutes from "./featurePages/featureRoutes";
+import ForgotPassword from "./authentication/ForgotPassword";
+import UpdatePassword from "./authentication/UpdatePassword";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -45,6 +47,8 @@ const App = (props) => {
         <Route exact path="/" component={Hero} />
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
+        <Route exact path="/users/forgot-password" component={ForgotPassword} />
+        <Route exact path="/users/reset-password/:id/:token" component={UpdatePassword} />
         <Route exact path="/climbs" component={ClimbList} />
         <Route exact path="/climbs/:id">
           <ClimbShow user={currentUser} />
@@ -64,7 +68,7 @@ const App = (props) => {
       </Switch>
       <BottomBar />
     </Router>
-  );
+  )
 };
 
 export default hot(App);
