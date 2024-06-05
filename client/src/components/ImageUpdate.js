@@ -11,6 +11,7 @@ const ImageUpdate = ({ changePane, userProfile, setUserProfile }) => {
   const allowedTypes = ['image/jpeg', "image/png"]
   let imagePreview
   let addEditButton
+  let errorPane
 
   const submitProfilePhoto = async () => {
     const newPhotoBody = new FormData()
@@ -53,22 +54,35 @@ const ImageUpdate = ({ changePane, userProfile, setUserProfile }) => {
         profileImage: "",
         profileImageURL: "",
       })
-      setErrors("Profile picture must be a JPG or PNG!")
+      setErrors(" Profile picture must be a JPG or PNG!")
     }
   }
 
   if (Object.keys(image.profileImage).length !== 0) {
     imagePreview = <div className="new-image-wrapper">
       <img src={image.profileImageURL} alt="profile image preview" className="image-preview"></img>
-      <FontAwesomeIcon icon="fa-solid fa-floppy-disk" className="modal-icon save-icon" onClick={submitProfilePhoto} /> 
+      <FontAwesomeIcon icon="fa-solid fa-floppy-disk" className="add-image-icon save-icon" onClick={submitProfilePhoto} /> 
       </div>
   }
   
   if (Object.keys(image.profileImage).length === 0) {
-    addEditButton = <p>Add Image</p>
+    addEditButton = <FontAwesomeIcon icon="fa-solid fa-plus" title="Upload image" className="add-image-icon" />
   } else {
-    addEditButton = <p>Choose different Image</p>
+    addEditButton = <FontAwesomeIcon icon="fa-solid fa-rotate-right" title="Choose different image" className="add-image-icon" />
   }
+
+  if (Object.keys(errors).length !== 0) {
+    addEditButton = <FontAwesomeIcon icon="fa-solid fa-rotate-right" title="Choose different image" className="add-image-icon" />
+    errorPane = (
+      <p className="image-errors">
+        <FontAwesomeIcon icon="fa-solid fa-triangle-exclamation" />
+        {errors}
+      </p>
+    )
+  } else {
+    errorPane = ""
+  }
+
 
   return (
     <div className="modal-wrapper">
@@ -76,16 +90,16 @@ const ImageUpdate = ({ changePane, userProfile, setUserProfile }) => {
       <div className="image-modal-div">
         <Dropzone onDrop={handleProfileImageUpload}>
           {({ getRootProps, getInputProps }) => (
-            <section className="update-image-dnd">
+            // <section className="update-image-dnd">
               <div {...getRootProps()}>
                 <input {...getInputProps()} />
                 {addEditButton}
               </div>
-            </section>
+            // </section>
           )}
         </Dropzone>
         {imagePreview}
-        <h2 className="image-errors">{errors}</h2>
+        {errorPane}
       </div>
     </div>
   )

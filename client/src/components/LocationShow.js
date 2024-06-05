@@ -139,10 +139,6 @@ const LocationShow = (props) => {
         <div
           className={`cell small-12 medium-4 large-4 hero-left-block overflow-block ${leftRadiusClass}`}
         >
-          <Link to="/locations" className="back-link">
-            <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
-            Back to location list
-          </Link>
           {showNewAreaForm === 0 ? (
             locationPane
           ) : (

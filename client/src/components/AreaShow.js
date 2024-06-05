@@ -161,10 +161,6 @@ const AreaShow = (props) => {
         <div
           className={`cell small-12 medium-4 large-4 hero-left-block overflow-block ${leftRadiusClass}`}
         >
-          <Link to="/areas" className="back-link">
-            <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
-            Back to area list
-          </Link>
           {showNewClimb === 0 ? areaDetails : newClimbForm}
           <span className="climb-arrow" onClick={showClimbDataPane}>
             {expandArrow}

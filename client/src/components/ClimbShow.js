@@ -64,7 +64,7 @@ const ClimbShow = (props) => {
     pane = (
       <>
         <h2 className="show-h2">{climb.name}</h2>
-        <Link to={`/areas/${climb.areaId}`} className="climb-link light show-a">
+        <Link to={`/areas/${climb.areaId}`} className="climb-link medium area-link">
           {climb.area}
         </Link>
         <Link to={`/profile/${climb.userId}`} className="climb-link light show-a">
@@ -99,7 +99,7 @@ const ClimbShow = (props) => {
     pane = (
       <>
         <h2 className="show-h2">{climb.name}</h2>
-        <Link to={`/areas/${climb.areaId}`} className="climb-link light show-a">
+        <Link to={`/areas/${climb.areaId}`} className="climb-link light">
           {climb.area}
         </Link>
         <Link to={`/profile/${climb.userId}`} className="climb-link light show-a">
@@ -117,10 +117,6 @@ const ClimbShow = (props) => {
     <div className="show-block">
       <div className="grid-x">
         <div className="cell small-12 medium-4 large-4 hero-left-block overflow-block left-radius">
-          <Link to={`/areas/${climb.areaId}`} className="back-link">
-            <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
-            Click me to go to this climb's area!
-          </Link>
           {pane}
         </div>
         <div className="cell small-12 medium-4 large-4 hero-right-block clear-bg right-radius">

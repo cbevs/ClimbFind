@@ -61,7 +61,7 @@ const UserProfile = ({ user }) => {
         ? <h2>You're looking pretty good, {user.username}! </h2> 
         : <h2>{userProfile.username} looks pretty good, don't they?</h2> }
       <p className="climbs-sent-text">Climbs {userProfile.username} has sent</p>
-      <UserTicklist user={userProfile} />
+      <UserTicklist user={userProfile} currentUser={user} />
       </div>
       <div className="cell small-12 medium-4 large-4 hero-right-block overflow-block relative right-radius">
         <img src={userProfile.profileImage} className="profile-page-image"           alt="profile-picture"></img>

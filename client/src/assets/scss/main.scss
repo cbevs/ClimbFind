@@ -189,8 +189,16 @@ a {
   padding: 0;
 }
 
+.area-link {
+  padding-left: 0.1rem;
+}
+
 .heavy {
   font-weight: 600;
+}
+
+.medium {
+  font-weight: 400;
 }
 
 .light {
@@ -590,14 +598,16 @@ no-format-link:focus {
 
 .ticklist-icon:hover {
   cursor: pointer;
+  color: #448b3a;
 }
 
 .tick-edit {
-  width: 50%;
+  width: 95%;
 }
 
 .icon:hover {
   cursor: pointer;
+  color: #448b3a;
 }
 
 .relative {
@@ -607,13 +617,47 @@ no-format-link:focus {
 .edit-image-icon {
   position: absolute;
   bottom: 0.5rem;
-  left: 0.5rem;
-  color: #fff;
+  right: 0.5rem;
   font-size: 1.5em;
+  background-color: #81d775;
+  color: #e9e9e9;
+  border-radius: 50%;
+  padding: 1rem;
+  transition:
+    background-color 0.5s ease-out,
+    color 0.5s ease-out;
 }
 
 .edit-image-icon:hover {
   cursor: pointer;
+  color: #81d775;
+  background-color:#e9e9e9;
+  transition:
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
+}
+
+.add-image-icon {
+  height: 2rem;
+  width: 2rem;
+  margin: 0 auto;
+  font-size: 1.5em;
+  background-color: #81d775;
+  color: #e9e9e9;
+  border-radius: 50%;
+  padding: 1rem;
+  transition:
+    background-color 0.5s ease-out,
+    color 0.5s ease-out;
+}
+
+.add-image-icon:hover {
+  cursor: pointer;
+  color: #81d775;
+  background-color:#e9e9e9;
+  transition:
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
 }
 
 .modal-wrapper {
@@ -632,10 +676,12 @@ no-format-link:focus {
 
 .modal-icon:hover {
   cursor: pointer;
+  color: #81d775;
 }
 
 .image-modal-div {
   padding: 1rem;
+  text-align: center;
 }
 
 .image-preview {
@@ -676,8 +722,10 @@ no-format-link:focus {
   text-align: center;
   font-weight: 500;
   color: #f64202;
-  background-color: #81d775;
+  background-color: #fff;
   border-radius: 10px;
+  padding: 0.5rem;
+  margin-top: 1rem;
 }
 
 .wait {
@@ -773,5 +821,13 @@ no-format-link:focus {
     
     .tick-hr {
       border: 1px solid #448b3a;
+    }
+
+    .weather-block {
+      border-radius: 0px 0px 10px 10px;
+    }
+
+    .map-block {
+      border-radius: 10px 10px 0px 0px;
     }
 }

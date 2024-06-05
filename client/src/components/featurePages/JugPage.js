@@ -32,10 +32,6 @@ const JugPage = () => {
     <div className="show-block">
       <div className="grid-x">
         <div className="cell small-12 medium-4 large-4 hero-left-block overflow-block left-radius">
-        <Link to="/features" className="back-link">
-          <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
-            Back to features list
-        </Link>
         <h2 className="hero-h2">Jug</h2>
         <p className="hold-segment">What is a jug?</p>
         <p>Jugs are pretty much every beginner's favorite hold and every strong climber's savior mid-climb. They come in all shapes and sizes, but all have one thing in common: they're like grabbing a handle or as you'll often hear climbers lovingly say: "it's a bucket!". Jugs are the holds that you probably started out on!</p>
