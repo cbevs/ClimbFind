@@ -102,7 +102,9 @@ const ClimbShow = (props) => {
         <Link to={`/areas/${climb.areaId}`} className="climb-link light show-a">
           {climb.area}
         </Link>
-        <p className="light">Added by {climb.username}</p>
+        <Link to={`/profile/${climb.userId}`} className="climb-link light show-a">
+          Added by {climb.username}
+        </Link>
         <p className="features-p light">{features}</p>
         <p className="show-p heavy">{climb.grade}</p>
         <p className="show-p">{climb.description}</p>
