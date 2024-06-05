@@ -110,7 +110,7 @@ const ClimbForm = ({ showNewClimbForm, setArea, area, areaId }) => {
         }
       } else {
         const newClimb = await response.json()
-        setArea({ ...area, climbs: [...area.climbs, newClimb.climb] })
+        setArea({ ...area, climbs: [...area.climbs, newClimb.climb], climbCount: parseInt(area.climbCount) + 1 })
         showNewClimbForm()
       }
     } catch(error) {

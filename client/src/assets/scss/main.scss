@@ -468,6 +468,10 @@ textarea {
   padding-left: 2rem;
 }
 
+.crud-buttons {
+  padding-left: 1rem;
+}
+
 .climb-arrow {
   padding-left: 1rem;
   width: 50%;
@@ -744,20 +748,29 @@ no-format-link:focus {
     .hero-left-block {
       border-radius: 10px 10px 0px 0px;
     }
+
     .hero-right-block {
       border-radius: 0px 0px 10px 10px;
       margin-bottom: 5rem;
     }
+
     .front-page-image {
       border-radius: 0px 0px 10px 10px;
     }
+
+    .climb-show-image {
+      border-radius: 0px 0px 10px 10px
+    }
+
     .climb-tile {
       margin: 0.2rem 0rem 0rem 1rem;
       display: block;
     }
+
     .hr-hidden {
       display: block;
     }
+    
     .tick-hr {
       border: 1px solid #448b3a;
     }

@@ -8,7 +8,7 @@ const climbRouter = new express.Router()
 
 climbRouter.get("/recents", async (req, res) => {
   try{
-    const climbData = await Climb.query().range(0, 4)
+    const climbData = await Climb.query().orderBy("createdAt", "desc").range(0, 4)
     const serializedClimbData = await Promise.all(climbData.results.map(async climb => {
       return await ClimbSerializer.getClimbInfo(climb)
     }))
@@ -31,20 +31,25 @@ climbRouter.get("/:id", async (req, res) => {
 
 climbRouter.post("/search", async (req, res) => {
   const responseBody = req.body
-  
-  const firstVariable = responseBody.shift()
-  try{
-    const climbData = await Climb.query().where((builder) => {
-      builder.whereILike('features', `%${firstVariable}%`)
 
-      if(responseBody.length !== 0) {
-        for(let i = 0; i < responseBody.length; i++){
-          builder.andWhereILike('features', `%${responseBody[i]}%`)
+  const firstVariable = responseBody.shift()
+  try {
+    const climbData = await Climb.query().where((builder) => {
+      builder.whereILike("features", `%${firstVariable}%`)
+
+      if (responseBody.length !== 0) {
+        for (let i = 0; i < responseBody.length; i++) {
+          builder.andWhereILike("features", `%${responseBody[i]}%`)
         }
       }
-  })
-    return res.status(200).json({ climbs: climbData })
-  } catch(error) {
+    })
+    const serializedClimbData = await Promise.all(
+      climbData.map(async (climb) => {
+        return await ClimbSerializer.getClimbInfo(climb)
+      })
+    )
+    return res.status(200).json({ climbs: serializedClimbData })
+  } catch (error) {
     return res.status(500).json({ errors: error.message })
   }
 })
