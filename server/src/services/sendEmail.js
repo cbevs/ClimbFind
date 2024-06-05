@@ -19,8 +19,6 @@ const sendEmail = async (link, email) => {
     subject: "Boulder Buddy Password Reset",
     html: `<a href=${link}>Click here to reset your password.</a>`
   })
-
-  console.log("message sent")
 }
 
 export default sendEmail

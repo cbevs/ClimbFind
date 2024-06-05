@@ -95,9 +95,11 @@ const AreaShow = (props) => {
           {area.climbCount} {area.climbCount === "0" || area.climbCount > 1 ? "climbs" : "climb"}
         </p>
         <p className="show-p">{area.description}</p>
-        <p onClick={showNewClimbForm} className="area-climb-button">
-          Add new climb
-        </p>
+        <div className="crud-buttons">
+          <p onClick={showNewClimbForm} className="area-climb-button">
+            Add new climb
+          </p>
+        </div>
       </>
     )
   } else {
@@ -118,7 +120,7 @@ const AreaShow = (props) => {
   const newClimbForm = (
     <ClimbForm showNewClimbForm={showNewClimbForm} setArea={setArea} area={area} areaId={id} />
   )
-
+  
   const climbData = (
     <div className="grid-x">
       <div className="cell small-12 medium-4 large-4">

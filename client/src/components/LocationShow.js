@@ -106,9 +106,11 @@ const LocationShow = (props) => {
         <h2 className="show-h2">{location.name}</h2>
         <p className="show-p">{location.location}</p>
         <p className="show-p">{location.description}</p>
-        <p onClick={changePane} className="area-climb-button">
-          Add New Area
-        </p>
+        <div className="crud-buttons">
+          <p onClick={changePane} className="area-climb-button">
+            Add New Area
+          </p>
+        </div>
       </>
     )
   } else {

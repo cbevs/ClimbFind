@@ -67,14 +67,19 @@ const ClimbShow = (props) => {
         <Link to={`/areas/${climb.areaId}`} className="climb-link light show-a">
           {climb.area}
         </Link>
+        <Link to={`/profile/${climb.userId}`} className="climb-link light show-a">
+          Added by {climb.username}
+        </Link>
         <p className="features-p light">{features}</p>
         <p className="show-p heavy">{climb.grade}</p>
         <p className="show-p">{climb.description}</p>
         <p className="show-p">{climb.directions}</p>
-        <p onClick={changePane} className="area-climb-button climb-show-buttons">
-          Log ascent
-        </p>
-        {editButton}
+        <div className="crud-buttons">
+          <p onClick={changePane} className="area-climb-button climb-show-buttons">
+            Log ascent
+          </p>
+          {editButton}
+        </div>
       </>
     )
   } else if (showTicklist === 1) {
@@ -97,6 +102,7 @@ const ClimbShow = (props) => {
         <Link to={`/areas/${climb.areaId}`} className="climb-link light show-a">
           {climb.area}
         </Link>
+        <p className="light">Added by {climb.username}</p>
         <p className="features-p light">{features}</p>
         <p className="show-p heavy">{climb.grade}</p>
         <p className="show-p">{climb.description}</p>

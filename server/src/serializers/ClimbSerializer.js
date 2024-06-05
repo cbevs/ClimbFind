@@ -10,6 +10,10 @@ class ClimbSerializer {
 
     const area = await climb.$relatedQuery("area")
     serializedClimb.area = area.name
+
+    const user = await climb.$relatedQuery("user")
+    serializedClimb.username = user.username
+
     return serializedClimb
   }
 
