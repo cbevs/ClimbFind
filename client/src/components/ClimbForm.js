@@ -120,7 +120,7 @@ const ClimbForm = ({ showNewClimbForm, setArea, area, areaId }) => {
 
   return (
     <>
-      <p className="area-climb-button" onClick={showNewClimbForm}>Back to area details</p>
+      <p className="area-climb-button" onClick={showNewClimbForm}>Take me back!</p>
       <form className="new-climb-form" onSubmit={onSubmitHandler}>
         <label>
           Climb Name:

@@ -11,8 +11,8 @@ import mapLoader from "../services/mapLoader"
 const AreaShow = (props) => {
   const { id } = useParams()
   const [area, setArea] = useState({})
-  const [showNewClimb, setShowNewClimb] = useState(0)
-  const [showClimbData, setShowClimbData] = useState(0)
+  const [showNewClimb, setShowNewClimb] = useState(false)
+  const [showClimbData, setShowClimbData] = useState(false)
   const [leftRadiusClass, setLeftRadiusClass] = useState("left-radius")
   const [rightRadiusClass, setrightRadiusClass] = useState("right-radius")
   let climbList
@@ -54,22 +54,22 @@ const AreaShow = (props) => {
   }
 
   const showNewClimbForm = () => {
-    if (showNewClimb === 1) {
-      setShowNewClimb(0)
+    if (showNewClimb) {
+      setShowNewClimb(false)
     } else {
-      setShowNewClimb(1)
+      setShowNewClimb(true)
     }
   }
 
   const showClimbDataPane = () => {
-    if (showClimbData === 1) {
-      setShowClimbData(0)
+    if (showClimbData === true) {
+      setShowClimbData(false)
       setLeftRadiusClass("left-radius")
       setrightRadiusClass("right-radius")
     } else {
       setLeftRadiusClass("")
       setrightRadiusClass("")
-      setShowClimbData(1)
+      setShowClimbData(true)
     }
   }
 
@@ -133,7 +133,7 @@ const AreaShow = (props) => {
     </div>
   )
 
-  if (showClimbData === 1) {
+  if (showClimbData) {
     climbDataArea = climbData
     expandArrow = (
       <>
@@ -161,11 +161,7 @@ const AreaShow = (props) => {
         <div
           className={`cell small-12 medium-4 large-4 hero-left-block overflow-block ${leftRadiusClass}`}
         >
-          <Link to="/areas" className="back-link">
-            <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
-            Back to area list
-          </Link>
-          {showNewClimb === 0 ? areaDetails : newClimbForm}
+          {(!showNewClimb) ? areaDetails : newClimbForm}
           <span className="climb-arrow" onClick={showClimbDataPane}>
             {expandArrow}
           </span>

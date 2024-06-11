@@ -32,10 +32,6 @@ const DynoPage = () => {
     <div className="show-block">
       <div className="grid-x">
         <div className="cell small-12 medium-4 large-4 hero-left-block overflow-block left-radius">
-          <Link to="/features" className="back-link">
-            <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
-            Back to features list
-          </Link>
           <h2 className="hero-h2">Dyno</h2>
           <p className="hold-segment">What is an dyno?</p>
           <p>

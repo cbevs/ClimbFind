@@ -4,16 +4,16 @@ import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const TicklistTile = ({ tick, currentUserId, profileUserId, ticklist, setTicklist }) => {
-  const [showEditTick, setShowEditTick] = useState(0)
+  const [showEditTick, setShowEditTick] = useState(false)
   let editDeletePane
   let tickPane
   const date = (new Date(tick.date)).toLocaleDateString()
 
   const changePane = () => {
-    if (showEditTick === 0) {
-      setShowEditTick(1)
+    if (showEditTick) {
+      setShowEditTick(false)
     } else {
-      setShowEditTick(0)
+      setShowEditTick(true)
     }
   }
 
@@ -59,7 +59,7 @@ const TicklistTile = ({ tick, currentUserId, profileUserId, ticklist, setTicklis
     )
   }
 
-  if (showEditTick === 0) {
+  if (!showEditTick) {
     tickPane = (
       <>
         <Link to={`/climbs/${tick.climbId}`} className="climb-link heavy">

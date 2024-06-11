@@ -31,11 +31,7 @@ const UnderclingPage = () => {
   return (
     <div className="show-block">
       <div className="grid-x">
-        <div className="cell small-12 medium-4 large-4 hero-left-block overflow-block left-radius">
-          <Link to="/features" className="back-link">
-            <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
-            Back to features list
-          </Link>
+        <div className="cell small-12 medium-4 large-4 hero-left-block overflow-block left-radius">          
           <h2 className="hero-h2">Undercling</h2>
           <p className="hold-segment">What is an undercling?</p>
           <p>

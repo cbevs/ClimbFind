@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 
 const ClimbDeleteButton = ({ climb }) => {
-  const [confirmDelete, setConfirmDelete] = useState(0)
+  const [confirmDelete, setConfirmDelete] = useState(false)
   const [shouldRedirect, setShouldRedirect] = useState(false)
 
   const changeButton = () => {
-    setConfirmDelete(1)
+    setConfirmDelete(true)
   }
 
   const deleteClimb = async () => {
@@ -32,7 +32,7 @@ const ClimbDeleteButton = ({ climb }) => {
 
   let deleteButton = <p onClick={changeButton} className="area-climb-button">Delete Climb</p>
     
-  if (confirmDelete === 1) {
+  if (confirmDelete) {
     deleteButton = <>
       <p onClick={deleteClimb} className="area-climb-button delete-button">I'm sure!</p>
       <p className="confirm-delete">There may be ticks on this climb related to other users. Are you sure you want to delete this climb?</p>

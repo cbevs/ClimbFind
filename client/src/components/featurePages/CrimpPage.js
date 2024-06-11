@@ -32,10 +32,6 @@ const CrimpPage = () => {
     <div className="show-block">
       <div className="grid-x">
         <div className="cell small-12 medium-4 large-4 hero-left-block overflow-block left-radius">
-        <Link to="/features" className="back-link">
-          <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
-            Back to features list
-        </Link>
         <h2 className="hero-h2">Crimp</h2>
         <p className="hold-segment">What is a crimp?</p>
         <p>A crimp is a small edge, usually measured in finger pads (the segments for your finger). Crimps are the holds that drive fear into a climber's heart and brings pain to their fingertips. Most finger-based injuries happen due to crimps, but with a little mindful training and proper warm ups, you can turn these little razors from enemies to friends.</p>
