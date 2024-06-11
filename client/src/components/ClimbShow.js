@@ -53,9 +53,7 @@ const ClimbShow = (props) => {
   if (props.user) {
     if (props.user.id === climb.userId) {
       editButton = (
-        <p onClick={changePaneEdit} className="area-climb-button climb-show-buttons">
-          Edit Climb
-        </p>
+        <FontAwesomeIcon icon="fa-solid fa-pen-to-square" onClick={changePaneEdit} className="icon climb-icon" title="Edit Climb" />
       )
     }
   }
@@ -75,9 +73,7 @@ const ClimbShow = (props) => {
         <p className="show-p">{climb.description}</p>
         <p className="show-p">{climb.directions}</p>
         <div className="crud-buttons">
-          <p onClick={changePane} className="area-climb-button climb-show-buttons">
-            Log ascent
-          </p>
+          <FontAwesomeIcon icon="fa-solid fa-check-double" onClick={changePane} className="icon climb-icon" title="Log Ascent" />
           {editButton}
         </div>
       </>

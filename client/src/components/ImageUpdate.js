@@ -64,7 +64,7 @@ const ImageUpdate = ({ changePane, userProfile, setUserProfile }) => {
   if (Object.keys(image.profileImage).length !== 0) {
     imagePreview = <div className="new-image-wrapper">
       <img src={image.profileImageURL} alt="profile image preview" className="image-preview"></img>
-      <FontAwesomeIcon icon="fa-solid fa-floppy-disk" className="add-image-icon save-icon" onClick={submitProfilePhoto} /> 
+      <FontAwesomeIcon icon="fa-solid fa-floppy-disk" className="add-image-icon save-icon" title="Save Image" onClick={submitProfilePhoto} /> 
       </div>
   }
   

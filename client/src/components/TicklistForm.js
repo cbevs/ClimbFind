@@ -61,7 +61,7 @@ const TicklistForm = ({ changePane, climbId, user }) => {
 
   return (
     <>
-    <p onClick={changePane} className="area-climb-button ">Show climb details</p>
+    <p onClick={changePane} className="area-climb-button ">Take me back!</p>
     <form onSubmit={submitNewTick}>
         <label>
           Notes:

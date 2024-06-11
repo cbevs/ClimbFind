@@ -1,6 +1,7 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
 @include foundation-everything;
 // place global css here
 *,
@@ -19,8 +20,8 @@ body {
 }
 
 .hero-h2 {
-  font-family: "Inter", "Arial", sans-serif;
-  line-height: 90%;
+  font-family: "Patua One", "Times New Roman", serif;
+  line-height: 1.2;
 }
 
 .bottom-bar {
@@ -268,7 +269,8 @@ a {
 }
 
 .show-h2 {
-  margin-bottom: -10px;
+  font-family: "Patua One", "Times New Roman", serif;
+  line-height: 1.2;
 }
 
 .features-p {
@@ -383,6 +385,11 @@ textarea {
   margin: 0;
 }
 
+.climb-icon {
+  font-size: 2rem;
+  padding-right: 1rem;
+}
+
 .back-link {
   display: block;
   padding-bottom: 0.5rem;
@@ -485,6 +492,7 @@ textarea {
 
 .crud-buttons {
   padding-left: 1rem;
+  padding-top: 1rem;
 }
 
 .climb-arrow {
@@ -801,20 +809,32 @@ no-format-link:focus {
 
 @media screen and (max-width: 575px) {
     .hero-left-block {
-      border-radius: 10px 10px 0px 0px;
+      border-radius: 0;
     }
 
     .hero-right-block {
-      border-radius: 0px 0px 10px 10px;
+      border-radius: 0;
       margin-bottom: 5rem;
     }
 
+    .show-block {
+      width: 100%;
+      margin: 1rem 0 2rem auto;
+      padding: 0;
+    }
+
+    .hero-block {
+      width: 100%;
+      margin: 1rem 0 2rem auto;
+      padding: 0;
+    }
+
     .front-page-image {
-      border-radius: 0px 0px 10px 10px;
+      border-radius: 0;
     }
 
     .climb-show-image {
-      border-radius: 0px 0px 10px 10px
+      border-radius: 0;
     }
 
     .climb-tile {
@@ -831,10 +851,10 @@ no-format-link:focus {
     }
 
     .weather-block {
-      border-radius: 0px 0px 10px 10px;
+      border-radius: 0;
     }
 
     .map-block {
-      border-radius: 10px 10px 0px 0px;
+      border-radius: 0;
     }
 }

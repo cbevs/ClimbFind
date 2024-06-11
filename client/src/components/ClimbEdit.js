@@ -149,7 +149,7 @@ const ClimbEdit = ({ changePaneEdit, climb, setClimb, setParentFeatures }) => {
 
   return (
     <>
-    <p onClick={changePaneEdit} className="area-climb-button">Show climb details</p>
+    <p onClick={changePaneEdit} className="area-climb-button">Take me back!</p>
     <ClimbDeleteButton climb={climb} />
       <form className="new-climb-form" onSubmit={onSubmitHandler}>
         <label>
