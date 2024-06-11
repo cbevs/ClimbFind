@@ -9,7 +9,7 @@ const TicklistForm = ({ changePane, climbId, user }) => {
     date: ""
   })
   const [errors, setErrors] = useState([])
-  const [submitted, setSubmitted] = useState(0)
+  const [submitted, setSubmitted] = useState(false)
   
   const submitNewTick = async (event) => {
     event.preventDefault()
@@ -32,7 +32,7 @@ const TicklistForm = ({ changePane, climbId, user }) => {
           throw error
         }
       } else {
-        setSubmitted(1)
+        setSubmitted(true)
       }
     } catch(error) {
       console.error(error)
@@ -91,7 +91,7 @@ const TicklistForm = ({ changePane, climbId, user }) => {
             Clear
           </button>
           <input className="button" type="submit" value="Submit" />
-          { submitted === 0 ? null : tickSubmitted}
+          { (!submitted) ? null : tickSubmitted}
         </div>
       </form>
     </>

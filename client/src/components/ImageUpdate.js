@@ -42,6 +42,9 @@ const ImageUpdate = ({ changePane, userProfile, setUserProfile }) => {
   }
 
   const handleProfileImageUpload = (acceptedImage) => {
+    if (image.profileImageURL) {
+      URL.revokeObjectURL(image.profileImageURL)
+    }
     if(allowedTypes.includes(acceptedImage[0].type)){
       setImage({
         ...image,
@@ -83,10 +86,20 @@ const ImageUpdate = ({ changePane, userProfile, setUserProfile }) => {
     errorPane = ""
   }
 
+  const leaveUpdateImage = (event) => {
+    event.preventDefault()
+    if (image.profileImageURL) {
+      URL.revokeObjectURL(image.profileImageURL)
+      changePane()
+    } else {
+      changePane()
+    }
+  }
+
 
   return (
     <div className="modal-wrapper">
-      <FontAwesomeIcon icon="fa-regular fa-circle-xmark" title="Close" className="modal-icon" onClick={changePane} />
+      <FontAwesomeIcon icon="fa-regular fa-circle-xmark" title="Close" className="modal-icon" onClick={leaveUpdateImage} />
       <div className="image-modal-div">
         <Dropzone onDrop={handleProfileImageUpload}>
           {({ getRootProps, getInputProps }) => (

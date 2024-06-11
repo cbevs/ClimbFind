@@ -11,8 +11,8 @@ import AddCoordinates from "./AddCoordinates"
 const LocationShow = (props) => {
   const { id } = useParams()
   const [location, setLocation] = useState([])
-  const [showNewAreaForm, setShowNewAreaForm] = useState(0)
-  const [showLocationData, setShowLocationData] = useState(0)
+  const [showNewAreaForm, setShowNewAreaForm] = useState(false)
+  const [showLocationData, setShowLocationData] = useState(false)
   const [leftRadiusClass, setLeftRadiusClass] = useState("left-radius")
   const [rightRadiusClass, setrightRadiusClass] = useState("right-radius")
   let locationPane
@@ -36,10 +36,10 @@ const LocationShow = (props) => {
   }
 
   const changePane = () => {
-    if (showNewAreaForm === 1) {
-      setShowNewAreaForm(0)
+    if (showNewAreaForm) {
+      setShowNewAreaForm(false)
     } else {
-      setShowNewAreaForm(1)
+      setShowNewAreaForm(true)
     }
   }
 
@@ -48,14 +48,14 @@ const LocationShow = (props) => {
   }
 
   const showLocationDataPane = () => {
-    if (showLocationData === 1) {
-      setShowLocationData(0)
+    if (showLocationData) {
+      setShowLocationData(false)
       setLeftRadiusClass("left-radius")
       setrightRadiusClass("right-radius")
     } else {
       setLeftRadiusClass("")
       setrightRadiusClass("")
-      setShowLocationData(1)
+      setShowLocationData(true)
     }
   }
 
@@ -82,7 +82,7 @@ const LocationShow = (props) => {
     </div>
   )
 
-  if (showLocationData === 1) {
+  if (showLocationData) {
     locationDataArea = locationData
     expandArrow = (
       <>
@@ -139,7 +139,7 @@ const LocationShow = (props) => {
         <div
           className={`cell small-12 medium-4 large-4 hero-left-block overflow-block ${leftRadiusClass}`}
         >
-          {showNewAreaForm === 0 ? (
+          {(!showNewAreaForm) ? (
             locationPane
           ) : (
             <AreaForm
