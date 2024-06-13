@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import LocationTile from "./LocationTile"
 import LocationForm from "./LocationForm"
 import LocationSearch from "./LocationSearch"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome" 
 
 const LocationList = (props) => {
   const [locations, setLocations] = useState([])
   const [showNewLocation, setShowNewLocation] = useState(0)
+  const [loaded, setLoaded] = useState("right-loading")
   let locationPane
 
   const getLocations = async () => {
@@ -19,6 +20,7 @@ const LocationList = (props) => {
       }
       const responseBody = await response.json()
       setLocations(responseBody.locations)
+      setLoaded("hidden")
     } catch (error) {
       console.error(error)
     }
@@ -63,12 +65,16 @@ const LocationList = (props) => {
       <>
         <h2 className="hero-h2">Here are the locations we have in our database!</h2>
         <p>Don't see the location you're looking for? Add it below!</p>
-        <p onClick={showNewLocationForm} className="area-climb-button">
-          Add new location
-        </p>
-        <p onClick={showSearchForm} className="area-climb-button">
-          Search for a location
-        </p>
+        <div className="crud-buttons">
+          <div>
+            <FontAwesomeIcon icon="fa-solid fa-plus" title="Add New Area" className="add-icon" onClick={showNewLocationForm} />
+            <p className="icon-text-p">Add new location</p>
+          </div>
+          <div>
+            <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" title="Add New Area" className="add-icon" onClick={showSearchForm} />
+            <p className="icon-text-p">Search for a location</p>
+          </div>
+        </div>
       </>
     )
   } else {
@@ -96,15 +102,16 @@ const LocationList = (props) => {
 
   return (
     <div className="show-block">
+      <div className={loaded}></div>
       <div className="grid-x">
-        <div className="cell small-12 medium-4 large-4 hero-left-block overflow-block left-radius">
+        <div className="cell small-12 medium-10 large-6 hero-left-block overflow-block ">
           {showNewLocation === 0
             ? locationPane
             : showNewLocation === 1
               ? newLocationForm
               : searchPane}
         </div>
-        <div className="cell small-12 medium-4 large-4 hero-right-block overflow-block right-radius">
+        <div className="cell small-12 medium-10 large-6 hero-right-block overflow-block ">
           {locationArray}
         </div>
       </div>

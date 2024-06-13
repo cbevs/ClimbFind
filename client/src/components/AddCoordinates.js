@@ -69,10 +69,11 @@ const AddCoordinates = ({ area, setArea, location, setLocation }) => {
 
   return (
     <>
+      <CoordinateErrors errors={errors} />
       <form onSubmit={submitCoordinates} className="coordinates-form">
 
         <label>
-          Latitude:
+          <p className="form-input-p">Latitude:</p>
           <input
             className="new-form-option"
             type="text"
@@ -83,7 +84,7 @@ const AddCoordinates = ({ area, setArea, location, setLocation }) => {
         </label>
 
         <label>
-          Longitude:
+          <p className="form-input-p">Longitude:</p>
           <input
             className="new-form-option"
             type="text"
@@ -93,12 +94,11 @@ const AddCoordinates = ({ area, setArea, location, setLocation }) => {
           />
         </label>
         <div className="button-group">
-          <button type="button" className="button" onClick={clearForm}>
+          <button type="button" className="button app-button" onClick={clearForm}>
             Clear
           </button>
-          <input className="button" type="submit" value="Submit" />
+          <input className="button app-button" type="submit" value="Submit" />
         </div>
-        <CoordinateErrors errors={errors} />
       </form>
     </>
   )

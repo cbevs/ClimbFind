@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import getFeatures from "../services/getFeatures"
 import climbSearchFunction from "../services/climbSearchFunction"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const ClimbSearch = ({ setClimbs }) => {
 
@@ -20,11 +21,14 @@ const ClimbSearch = ({ setClimbs }) => {
   }
 
   return (
-    <form className="new-climb-form" onSubmit={onSubmitHandler}>
+    <form className="climb-select" onSubmit={onSubmitHandler}>
       <label>
-        What features does this climb have? Hint: Hold ctrl (pc) or cmd (mac) to
-        select multiple!
+        <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" className="search-icon" />
+        <p className="form-input-p search-p">Search for a climb</p>
+        <p className="form-input-p">What features does this climb have? Hint: Hold ctrl (pc) or cmd (mac) to
+        select multiple!</p>
         <select
+          className="climb-select"
           name="selectedFeatures"
           multiple={true}
           onChange={selectInputChange}
@@ -34,7 +38,7 @@ const ClimbSearch = ({ setClimbs }) => {
       </label>
 
       <div className="button-group">
-        <input className="button" type="submit" value="Submit" />
+        <input className="button app-button" type="submit" value="Submit" />
       </div>
     </form>
   )

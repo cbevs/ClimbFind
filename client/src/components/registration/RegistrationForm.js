@@ -121,9 +121,9 @@ const RegistrationForm = () => {
 
   return (
     <div className="grid-container">
-      <h1>Register</h1>
+      <h1 className="form-h1">Register</h1>
       <ErrorList errors={serverErrors} />
-      <form onSubmit={onSubmit}>
+      <form className="register-form" onSubmit={onSubmit}>
         <div>
           <label>
             <p className="form-input-p">Email</p>
@@ -178,7 +178,7 @@ const RegistrationForm = () => {
           )}
         </Dropzone>
         <div>
-          <input type="submit" className="button" value="Register" />
+          <input type="submit" className="button app-button" value="Register" />
         </div>
       </form>
     </div>

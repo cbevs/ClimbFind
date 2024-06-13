@@ -25,13 +25,13 @@ const HeelHookPage = () => {
   if (climbs.length > 0) {
     climbPane = climbsArray
   } else {
-    climbPane = <div className="no-climbs"><h2>No climbs found!</h2></div>
+    climbPane = <div className="no-climbs"><h2 className="no-climbs-h2">No climbs found!</h2></div>
   }
 
   return (
     <div className="show-block">
       <div className="grid-x">
-        <div className="cell small-12 medium-4 large-4 hero-left-block overflow-block left-radius">
+        <div className="cell small-12 medium-10 large-6 hero-left-block overflow-block ">
           <h2 className="hero-h2">Heel Hook</h2>
           <p className="hold-segment">What is a heel hook?</p>
           <p>
@@ -40,7 +40,7 @@ const HeelHookPage = () => {
           <p className="hold-segment">How do I get better at heel hooks?</p>
           <p>Make sure you are pointing your toes away from the wall when possible! Instead of throwing your heel on the hold and simply putting your weight on it, put that heel to work and pull with your legs to bring your body closer to the wall. Most heel hooks require hamstring and core strength as well as flexibility, so get to work (squats, deadlifts, kettlebell swings, stretch)! You can practice them by hopping on an easy climb and try to complete each move using heel hooks to move yourself up the route instead of pushing with your legs.</p>
         </div>
-        <div className="cell small-12 medium-4 large-4 hero-right-block overflow-block right-radius">
+        <div className="cell small-12 medium-10 large-6 hero-right-block overflow-block ">
           {climbPane}
         </div>
       </div>

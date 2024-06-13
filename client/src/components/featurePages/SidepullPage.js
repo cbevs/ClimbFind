@@ -25,13 +25,13 @@ const SidepullPage = () => {
   if (climbs.length > 0) {
     climbPane = climbsArray
   } else {
-    climbPane = <div className="no-climbs"><h2>No climbs found!</h2></div>
+    climbPane = <div className="no-climbs"><h2 className="no-climbs-h2">No climbs found!</h2></div>
   }
 
   return (
     <div className="show-block">
       <div className="grid-x">
-        <div className="cell small-12 medium-4 large-4 hero-left-block overflow-block left-radius">        
+        <div className="cell small-12 medium-10 large-6 hero-left-block overflow-block ">        
           <h2 className="hero-h2">Side Pull</h2>
           <p className="hold-segment">What is an side pull?</p>
           <p>
@@ -40,7 +40,7 @@ const SidepullPage = () => {
           <p className="hold-segment">How do I get better at side pulls?</p>
           <p>Climb on them more! When on a side pull, try to get your legs pushing in the same direction you are pulling. This will put more force into your hands, thus making your purchase on the side pull better. If you have access to a spray wall (a wall with a lot of holds and (usually) no marked routes set on it), create climbs that utilize side pulls and work them until you feel more confident, then make the climb harder!</p>
         </div>
-        <div className="cell small-12 medium-4 large-4 hero-right-block overflow-block right-radius">
+        <div className="cell small-12 medium-10 large-6 hero-right-block overflow-block ">
           {climbPane}
         </div>
       </div>

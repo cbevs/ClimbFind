@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ErrorList from "./layout/ErrorList"
 import translateServerErrors from "../services/translateServerErrors"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const LocationForm = ({ showNewLocationForm, setLocations, locations }) => {
   
@@ -58,14 +59,16 @@ const LocationForm = ({ showNewLocationForm, setLocations, locations }) => {
       latitude: "",
       longitude: ""
     })
+    setErrors([])
   }
 
   return (
     <>
-    <p className="area-climb-button" onClick={showNewLocationForm}>Take me back!</p>
+    <FontAwesomeIcon icon="fa-solid fa-arrow-left" title="Previous Window" className="add-icon" onClick={showNewLocationForm} />
+            <p className="icon-text-p">Take me back!</p>
     <form onSubmit={submitNewLocation}>
         <label>
-          Location Name:
+          <p className="form-input-p">Location Name:</p>
           <input
           className="new-form-option"
             type="text"
@@ -76,7 +79,7 @@ const LocationForm = ({ showNewLocationForm, setLocations, locations }) => {
         </label>
 
         <label>
-          Where is this location?:
+        <p className="form-input-p"> Where is this location?:</p>
           <textarea
             name="location"
             onChange={handleInputChange}
@@ -85,7 +88,7 @@ const LocationForm = ({ showNewLocationForm, setLocations, locations }) => {
         </label>
 
         <label>
-          Description:
+        <p className="form-input-p">Description:</p>
           <textarea
             name="description"
             onChange={handleInputChange}
@@ -94,7 +97,7 @@ const LocationForm = ({ showNewLocationForm, setLocations, locations }) => {
         </label>
 
         <label>
-          Latitude:
+        <p className="form-input-p">Latitude:</p>
           <input
             className="new-form-option"
             type="text"
@@ -105,7 +108,7 @@ const LocationForm = ({ showNewLocationForm, setLocations, locations }) => {
         </label>
 
         <label>
-          Longitude:
+        <p className="form-input-p">Longitude:</p>
           <input
             className="new-form-option"
             type="text"
@@ -117,10 +120,10 @@ const LocationForm = ({ showNewLocationForm, setLocations, locations }) => {
         
         <ErrorList errors={errors} />
         <div className="button-group">
-          <button type="button" className="button" onClick={clearForm}>
+          <button type="button" className="button app-button" onClick={clearForm}>
             Clear
           </button>
-          <input className="button" type="submit" value="Submit" />
+          <input className="button app-button" type="submit" value="Submit" />
         </div>
       </form>
     </>

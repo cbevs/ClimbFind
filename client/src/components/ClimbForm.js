@@ -16,9 +16,11 @@ const ClimbForm = ({ showNewClimbForm, setArea, area, areaId }) => {
   });
 
   const [errors, setErrors] = useState([])
+  const [imageError, setImageError] = useState({})
   const [features, setFeatures] = useState([]);
   const [hover, setHover] = useState(0);
   const featureOptions = getFeatures()
+  const allowedTypes = ['image/jpeg', "image/png"]
 
   const handleInputChange = (event) => {
     setNewClimb({
@@ -28,10 +30,19 @@ const ClimbForm = ({ showNewClimbForm, setArea, area, areaId }) => {
   };
 
   const handleProfileImageUpload = (acceptedImage) => {
-    setNewClimb({
-      ...newClimb,
-      climbImage: acceptedImage[0]
-    })
+    if (allowedTypes.includes(acceptedImage[0].type)) {
+      setNewClimb({
+        ...newClimb,
+        climbImage: acceptedImage[0]
+      })
+      setImageError({})
+    } else {
+      setNewClimb({
+        ...newClimb,
+        climbImage: ""
+      })
+      setImageError({ Image: "type is invalid!"})
+    }
   }
 
   const gradesArray = [...Array(17).keys()].map((gradeNumber) => ++gradeNumber)
@@ -78,6 +89,7 @@ const ClimbForm = ({ showNewClimbForm, setArea, area, areaId }) => {
     });
     setFeatures([])
     setErrors([])
+    setImageError({})
   };
 
   const onSubmitHandler = async (event) => {
@@ -120,10 +132,11 @@ const ClimbForm = ({ showNewClimbForm, setArea, area, areaId }) => {
 
   return (
     <>
-      <p className="area-climb-button" onClick={showNewClimbForm}>Take me back!</p>
+      <FontAwesomeIcon icon="fa-solid fa-arrow-left" title="Previous Window" className="add-icon" onClick={showNewClimbForm} />
+      <p className="icon-text-p">Take me back!</p>
       <form className="new-climb-form" onSubmit={onSubmitHandler}>
         <label>
-          Climb Name:
+          <p className="form-input-p">Climb Name:</p>
           <input
           className="new-climb-form-option"
             type="text"
@@ -134,7 +147,7 @@ const ClimbForm = ({ showNewClimbForm, setArea, area, areaId }) => {
         </label>
 
         <label>
-          What grade is it on the V scale?:
+        <p className="form-input-p">What grade is it on the V scale?:</p>
           <select
             name="grade"
             onChange={handleInputChange}
@@ -146,12 +159,12 @@ const ClimbForm = ({ showNewClimbForm, setArea, area, areaId }) => {
         </label>
 
         <label className="climb-input-left-pad">
-          Rating:
-          {ratingStars}
+          <p className="form-input-p">Rating:</p>
+          <div className="star-div">{ratingStars}</div>
         </label>
 
         <label>
-          Description:
+        <p className="form-input-p">Description:</p>
           <textarea
             name="description"
             onChange={handleInputChange}
@@ -160,7 +173,7 @@ const ClimbForm = ({ showNewClimbForm, setArea, area, areaId }) => {
         </label>
 
         <label>
-          Directions:
+        <p className="form-input-p">Directions:</p>
           <textarea
             name="directions"
             onChange={handleInputChange}
@@ -169,8 +182,8 @@ const ClimbForm = ({ showNewClimbForm, setArea, area, areaId }) => {
         </label>
 
         <label>
-          What features does this climb have? Hint: Hold ctrl (pc) or cmd (mac) to
-          select multiple!
+        <p className="form-input-p">What features does this climb have? Hint: Hold ctrl (pc) or cmd (mac) to
+          select multiple!</p>
           <select
             name="selectedFeatures"
             multiple={true}
@@ -194,11 +207,12 @@ const ClimbForm = ({ showNewClimbForm, setArea, area, areaId }) => {
         {newClimb.climbImage.name ? <p>{newClimb.climbImage.name}</p> : null }
         
         <ErrorList errors={errors} />
+        <ErrorList errors={imageError} />
         <div className="button-group">
-          <button type="button" className="button" onClick={clearForm}>
+          <button type="button" className="button app-button" onClick={clearForm}>
             Clear
           </button>
-          <input className="button" type="submit" value="Submit" />
+          <input className="button app-button" type="submit" value="Submit" />
         </div>
       </form>
     </>

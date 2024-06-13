@@ -55,16 +55,16 @@ const ForgotPassword = () => {
 
   return (
     <div className="grid-container">
-      <h1>Forgot Password?</h1>
+      <h1 className="form-h1">Forgot Password?</h1>
       {responsePane}
       <form onSubmit={submitEmail}>
         <label>
-          Enter your email address
-          <input type="text" name="email" onChange={handleInputChange} />
+        <p className="form-input-p">Enter your email address</p>
+          <input type="text" name="email" onChange={handleInputChange} className="form-round" />
         </label>
         
         <div>
-          <input type="submit" className="button" value="Send Password Reset Email" />
+          <input type="submit" className="button app-button" value="Send Password Reset Email" />
         </div>
       </form>
     </div>

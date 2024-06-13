@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const LocationSearch = ({ showSearchForm, setLocations }) => {
 
@@ -55,10 +56,11 @@ const LocationSearch = ({ showSearchForm, setLocations }) => {
 
   return(
     <>
-      <p onClick={showSearchForm} className="area-climb-button">Take me back!</p>
+      <FontAwesomeIcon icon="fa-solid fa-arrow-left" title="Previous Area" className="add-icon" onClick={showSearchForm} />
+      <p className="icon-text-p">Take me back!</p>
       <form onSubmit={sendSearch}>
         <label>
-          Location Name:
+          <p className="form-input-p">Location Name:</p>
           <input
           className="new-form-option"
             type="text"
@@ -69,11 +71,11 @@ const LocationSearch = ({ showSearchForm, setLocations }) => {
         </label>
 
         <div className="button-group">
-          <button type="button" className="button" onClick={clearForm}>
+          <button type="button" className="button app-button" onClick={clearForm}>
             Clear
           </button>
-          <input type="submit" className="button" />
-          <button type="button" className="button" onClick={resetResults}>
+          <input type="submit" className="button app-button" />
+          <button type="button" className="button app-button" onClick={resetResults}>
             Reset Locations
           </button>
         </div>
