@@ -17,11 +17,31 @@
 
 body {
   font-family: "Inter", "Arial", sans-serif;
+  background-color: #5cb085;
+  color: #fff;
 }
 
 .hero-h2 {
   font-family: "Patua One", "Times New Roman", serif;
   line-height: 1.2;
+}
+
+.form-h1 {
+  font-family: "Patua One", "Times New Roman", serif;
+  padding-top: 1rem;
+}
+
+.no-user-h1 {
+  font-family: "Patua One", "Times New Roman", serif;
+}
+
+.shadow {
+  box-shadow: 5px 7px 5px #00000033;
+  border-radius: 10px;
+}
+
+.register-form {
+  width: 60%;
 }
 
 .bottom-bar {
@@ -43,31 +63,65 @@ body {
   padding: 1rem;
 }
 
-.top-bar ul,
-a {
+.top-bar ul
+{
   background-color: #fff;
-  color: #888888;
   font-weight: 300;
+  font-family: "Patua One", "Times New Roman", serif;
 }
 
-.grid-x {
-  justify-content: center;
+.top-bar-text {
+  color: #888888;
 }
 
-.top-button {
-  background-color: #81d775;
+.top-bar-menu {
+  color: #888888;
+  transition:
+    background-color 0.5s ease-out,
+    color 0.5s ease-out;
 }
 
 .top-bar-menu:focus {
-  color: #2d5a26;
+  color: #81d775;
 }
 
 .top-bar-menu:hover {
-  color: #448b3a;
+  color: #5cb085;
+  transition:
+    background-color 0.5s ease-out,
+    color 0.5s ease-out;
+}
+
+button {
+  transition:
+    background-color 0.5s ease-out,
+    color 0.5s ease-out;
+}
+
+button:hover {
+  transition:
+    background-color 0.5s ease-out,
+    color 0.5s ease-out;
+}
+
+.app-button {
+  font-family: "Patua One", "Times New Roman", serif;
+  border-radius: 20px;
+  background-color:#81d775;
+}
+
+.app-button:hover {
+  background-color:#dbac74;
+}
+
+.app-button:focus {
+  background-color:#d29243;
 }
 
 .app-name {
-  color: #81d775;
+  padding: 0rem 1rem 0rem 1rem;
+  font-size: 1.5rem;
+  color:#5cb085;
 }
 
 .menu .menu-text {
@@ -78,72 +132,71 @@ a {
   background-color: #fff;
 }
 
-.button {
-  background-color: #448b3a;
+.sign-state-button {
   border-radius: 20px;
-}
-
-.button:hover {
-  background-color: #2d5a26;
+  background-color: #5cb085;
   color: #fff;
 }
 
-.button:focus {
-  background-color: #448b3a;
-  color: #fff;
+.sign-state-button:hover {
+  background-color: #81d775;
 }
 
-.focused-button:focus {
-  color: #fff;
+.sign-state-button:focus {
+  background-color: #81d775;
 }
 
 .hero-block {
-  background-color: #ffffffb2;
   height: 500px;
   width: 90%;
   margin: 1rem auto 0 auto;
   padding: 1.5rem;
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .hero-left-block {
   height: 450px;
   padding: 1rem;
-  background-color: #81d775;
-  border-radius: 10px 0px 0px 0px;
 }
 
 .hero-right-block {
   height: 450px;
-  background-color: #e9e9e9;
-  border-radius: 0px 10px 0px 0px;
 }
 
 .hero-icon-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding-left: 2rem;
   height: 50%;
 }
 
 .register-form-error {
   margin: -0.5rem 1rem 0rem 1rem;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: bold;
-  color: #448b3a;
+  color: #f8c486;
 }
 
 .drag-and-drop {
   display: flex;
   align-items: center;
-  height: 50px;
-  background-color: #d9d9d9;
+  color: #5cb085;
+  background-color: #fff;
+  font-family: "Patua One", "Times New Roman", serif;
   padding: 0.5rem;
   border-radius: 20px;
   margin-bottom: 0.7rem;
+  transition:
+    background-color 0.5s ease-out,
+    color 0.5s ease-out;
 }
 
 .drag-and-drop:hover {
   cursor: pointer;
+  background-color: #ffffffd4;
+  transition:
+    background-color 0.5s ease-out,
+    color 0.5s ease-out;
 }
 
 .drag-and-drop p {
@@ -154,11 +207,15 @@ a {
 .form-round {
   border-radius: 20px;
   padding-left: 1rem;
+  border: 0;
 }
 
 .form-input-p {
+  font-size: 1.1em;
   padding-left: 1rem;
   margin: 0;
+  color: #fff;
+  font-family: "Patua One", "Times New Roman", serif;
 }
 
 .user-image {
@@ -174,8 +231,16 @@ a {
   padding: 0.5rem;
 }
 
+.coordinates-errors {
+  list-style-type: none;
+  font-size: 1.2rem;
+}
+
 .error-callout {
-  background-color: #448b3a9c;
+  font-family: "Patua One", "Times New Roman", serif;
+  color: #f8c486;
+  font-size: 1.5rem;
+  background-color: #5cb085;
   position: relative;
   margin: 0 0 1rem 0;
   padding: 0;
@@ -192,6 +257,7 @@ a {
 }
 
 .climb-info-title {
+  font-size: 1.1em;
   padding-left: 0.5rem;
   margin: 0;
   padding: 0;
@@ -218,7 +284,7 @@ a {
 }
 
 .area-small-text {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .climb-tile-pad-left {
@@ -231,16 +297,18 @@ a {
 }
 
 .climb-link {
-  color: #000;
-  background-color: #8b88c700;
+  color: #fff;
 }
 
 .climb-link:hover {
-  color: #448b3a;
+  color: #f8c486;
+}
+
+.climb-link:focus {
+  color: #f8c486;
 }
 
 .show-block {
-  background-color: #ffffffb2;
   width: 90%;
   margin: 1rem auto 2rem auto;
   padding: 1.5rem;
@@ -280,6 +348,17 @@ a {
   margin: 0;
 }
 
+.search-p {
+  display: inline;
+}
+
+.search-icon {
+  color: #fff;
+  margin-right: -0.5rem;
+  padding-left: 1rem;
+  font-size: 1.2rem;
+}
+
 .show-p {
   padding: 0.5rem 0 0 1rem;
   margin: 0;
@@ -290,7 +369,7 @@ a {
   object-position: center;
   height: 100%;
   width: 100%;
-  border-radius: 0px 10px 10px 0px
+  border-radius: 10px;
 }
 
 .star-button {
@@ -301,15 +380,25 @@ a {
 }
 
 .star-on {
-  color: #000;
+  color: #f8c486;
 }
 .star-off {
   color: #fff;
 }
 
+.star-div {
+  padding-left: 1rem;
+}
+
 .new-climb-form select,
 textarea {
   border-radius: 10px;
+}
+
+.climb-select select {
+height: 200px;
+border-radius: 10px;
+border: 0;
 }
 
 .new-climb-form-option, .new-form-option {
@@ -329,12 +418,17 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #9d9c9c;
+  color: #f8c486;
+}
+
+.no-climbs-h2 {
+  font-family: "Patua One", "Times New Roman", serif;
 }
 
 .area-climb-button {
+  font-family: "Patua One", "Times New Roman", serif;
   padding: 10px 20px 10px 20px;
-  background-color: #448b3a;
+  background-color: #81d775;
   border-radius: 20px;
   text-align: center;
   color: #fff;
@@ -347,7 +441,8 @@ textarea {
 }
 
 .area-climb-button:hover {
-  background-color: #2d5a26;
+  font-family: "Patua One", "Times New Roman", serif;
+  background-color: #dbac74;
   color: #fff;
   transition:
     background-color 0.25s ease-out,
@@ -361,7 +456,7 @@ textarea {
 
 .climb-image {
   padding: 10px 20px 10px 20px;
-  background-color: #448b3a;
+  background-color: #81d775;
   border-radius: 20px;
   text-align: center;
   color: #fff;
@@ -374,7 +469,7 @@ textarea {
 }
 
 .climb-image:hover {
-  background-color: #2d5a26;
+  background-color: #dbac74;
   color: #fff;
   transition:
     background-color 0.25s ease-out,
@@ -390,23 +485,10 @@ textarea {
   padding-right: 1rem;
 }
 
-.back-link {
-  display: block;
-  padding-bottom: 0.5rem;
-  background-color: transparent;
-  color: #000;
-}
-
-.back-link:hover {
-  color: #448b3a;
-}
-
 .to-climbs-icon {
   background-color: transparent;
-  color: #448b3a;
+  color: #fff;
   font-size: 5rem;
-  display: flex;
-  justify-content: center;
   padding-top: 5rem;
   cursor: pointer;
   transition:
@@ -415,10 +497,14 @@ textarea {
 }
 
 .to-climbs-icon:hover {
-  color: #2d5a26;
+  color: #f8c486;
   transition:
     background-color 0.25s ease-out,
     color 0.25s ease-out;
+}
+
+.to-climbs-icon:focus {
+  color: #f8c486;
 }
 
 .clear-bg {
@@ -435,6 +521,7 @@ textarea {
   object-position: center;
   height: 100%;
   width: 100%;
+  border-radius: 10px;
 }
 
 .ticklist-date {
@@ -450,8 +537,9 @@ textarea {
 }
 
 .climbs-sent-text {
-  font-weight: 800;
+  font-family: "Patua One", "Times New Roman", serif;
   margin-bottom: 0.5rem;
+  color: #f8c486;
 }
 
 .climb-show-buttons {
@@ -460,33 +548,17 @@ textarea {
   margin: 0.5rem 0.5rem 0rem 0rem;
 }
 
-.delete-button {
-  background-color: #f64202;
-}
-
-.delete-button:hover {
-  background-color: #e34b15;
-}
-
-.confirm-delete {
-  color: #f64202;
-  font-weight: 900;
-}
-
 .weather-block {
   height: 300px;
-  background-color: #e9e9e9;
-  border-radius: 0px 0px 10px 0px;
 }
 
 .map-block {
   height: 300px;
-  background-color: #e9e9e9;
-  border-radius: 0px 0px 0px 10px;
+  border-radius: 10px;
 }
 
 .coordinates-form {
-  width: 60%;
+  width: 30%;
   padding-left: 2rem;
 }
 
@@ -510,8 +582,10 @@ textarea {
 }
 
 .coordinates-p {
+  padding-left: 1rem;
   margin: 0;
-  padding-left: 2rem;
+  font-size: 1.5rem;
+  font-family: "Patua One", "Times New Roman", serif;
 }
 
 .weather-block {
@@ -523,25 +597,17 @@ textarea {
   padding: 0;
 }
 
-.left-radius {
-  border-bottom-left-radius: 10px;
-}
-
-.right-radius {
-  border-bottom-right-radius: 10px;
-}
-
 .forgot-password-link {
   display: block;
 }
 
 .reset-password-errors {
+  font-family: "Patua One", "Times New Roman", serif;
+  font-size: 2rem;
   width: 80%;
   padding: 5rem;
   margin: 5rem auto;
   text-align: center;
-  border-radius: 10px;
-  background-color: #448b3a9c;
 }
 
 .password-no-match {
@@ -553,40 +619,51 @@ textarea {
   top: 0.9rem;
   right: 1rem;
   cursor: pointer;
+  transition:
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
 }
 
 .password-icon:hover {
-  color: #448b3a;
+  color: #5cb085;
+  transition:
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
 }
 
 .no-items-found {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100%;
-  width: 100%;
-}
-
-.no-items-found p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f8c486;
   font-weight: 700;
-  color: #9d9c9c;
   font-size: 2rem;
+  font-family: "Patua One", "Times New Roman", serif;
 }
 
 .no-format-link {
   margin: 0;
   padding: 0;
   background-color: transparent;
-  color: #000;
+  color: #fff;
   font-weight: inherit;
+  font-family: "Patua One", "Times New Roman", serif;
+  font-size: 1.2rem;
+  transition:
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
 }
 
 .no-format-link:hover {
-  color: #448b3a;
+  color: #f8c486;
+  transition:
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
 }
 
 no-format-link:focus {
-  color: inherit;
+  color: #f8c486;
 }
 
 .ticklist-p {
@@ -609,20 +686,35 @@ no-format-link:focus {
 
 .ticklist-icon {
   margin-right: 0.7rem;
+  transition:
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
 }
 
 .ticklist-icon:hover {
   cursor: pointer;
-  color: #448b3a;
+  color: #f8c486;
+  transition:
+    background-color 0.5s ease-out,
+    color 0.5s ease-out;
 }
 
 .tick-edit {
   width: 95%;
 }
 
+.icon {
+  transition:
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
+}
+
 .icon:hover {
   cursor: pointer;
-  color: #448b3a;
+  color: #f8c486;
+  transition:
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
 }
 
 .relative {
@@ -639,8 +731,8 @@ no-format-link:focus {
   border-radius: 50%;
   padding: 1rem;
   transition:
-    background-color 0.5s ease-out,
-    color 0.5s ease-out;
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
 }
 
 .edit-image-icon:hover {
@@ -650,6 +742,59 @@ no-format-link:focus {
   transition:
     background-color 0.25s ease-out,
     color 0.25s ease-out;
+}
+
+.add-icon {
+  height: 2rem;
+  width: 2rem;
+  margin: 0 auto;
+  font-size: 1.5em;
+  color: #81d775;
+  background-color:#e9e9e9;
+  border-radius: 50%;
+  padding: 1rem;
+  transition:
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
+}
+
+.add-icon:hover {
+  cursor: pointer;
+  background-color: #81d775;
+  color: #e9e9e9;
+  transition:
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
+}
+
+.delete-icon {
+  margin-left: 2rem;
+}
+
+.delete-button {
+  background-color: #f64202;
+  color: #fff;
+}
+
+.delete-button:hover {
+  background-color: #e34b15;
+}
+
+.confirm-delete {
+  display: inline-block;
+  color: #f8c486;
+  font-family: "Patua One", "Times New Roman", serif;
+}
+
+.hazard-icon {
+  color: #f8c486;
+  margin-right: 0.5rem;
+  margin-left: 1rem;
+}
+
+.icon-text-p {
+  display: inline-block;
+  font-family: "Patua One", "Times New Roman", serif;
 }
 
 .add-image-icon {
@@ -662,8 +807,8 @@ no-format-link:focus {
   border-radius: 50%;
   padding: 1rem;
   transition:
-    background-color 0.5s ease-out,
-    color 0.5s ease-out;
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
 }
 
 .add-image-icon:hover {
@@ -677,6 +822,7 @@ no-format-link:focus {
 
 .modal-wrapper {
   position: absolute;
+  border-radius: 10px;
   bottom: 0;
   background-color: #292929a8;
   height: 100%;
@@ -747,6 +893,39 @@ no-format-link:focus {
   cursor: wait;
 }
 
+.page-loading {
+  border: 16px solid #fff;
+  border-top: 16px solid #f8c486;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 40%;
+  left: 15%;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.right-loading {
+  border: 16px solid #fff;
+  border-top: 16px solid #f8c486;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 25%;
+  left: 69%;
+}
+
+.hidden {
+  display: none;
+}
+
 .front-page-image-container {
   width: 100%;
   height: 100%;
@@ -762,6 +941,7 @@ no-format-link:focus {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   border-radius: 0px 10px 10px 0px;
+  clip-path: circle()
 }
 
 @keyframes fadeInAnimation {
@@ -808,9 +988,6 @@ no-format-link:focus {
 }
 
 @media screen and (max-width: 575px) {
-    .hero-left-block {
-      border-radius: 0;
-    }
 
     .hero-right-block {
       border-radius: 0;
@@ -846,15 +1023,19 @@ no-format-link:focus {
       display: block;
     }
     
-    .tick-hr {
+    hr {
       border: 1px solid #448b3a;
-    }
-
-    .weather-block {
-      border-radius: 0;
     }
 
     .map-block {
       border-radius: 0;
+    }
+
+    .coordinates-form {
+      width: 90%;
+    }
+
+    .coordinates-p {
+      font-size: 1rem;
     }
 }

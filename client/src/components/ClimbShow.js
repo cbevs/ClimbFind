@@ -65,7 +65,7 @@ const ClimbShow = (props) => {
         <Link to={`/areas/${climb.areaId}`} className="climb-link medium area-link">
           {climb.area}
         </Link>
-        <Link to={`/profile/${climb.userId}`} className="climb-link light show-a">
+        <Link to={`/profile/${climb.userId}`} className="climb-link medium show-a">
           Added by {climb.username}
         </Link>
         <p className="features-p light">{features}</p>
@@ -95,10 +95,10 @@ const ClimbShow = (props) => {
     pane = (
       <>
         <h2 className="show-h2">{climb.name}</h2>
-        <Link to={`/areas/${climb.areaId}`} className="climb-link light">
+        <Link to={`/areas/${climb.areaId}`} className="climb-link medium">
           {climb.area}
         </Link>
-        <Link to={`/profile/${climb.userId}`} className="climb-link light show-a">
+        <Link to={`/profile/${climb.userId}`} className="climb-link medium show-a">
           Added by {climb.username}
         </Link>
         <p className="features-p light">{features}</p>
@@ -112,14 +112,14 @@ const ClimbShow = (props) => {
   return (
     <div className="show-block">
       <div className="grid-x">
-        <div className="cell small-12 medium-4 large-4 hero-left-block overflow-block left-radius">
+        <div className="cell small-12 medium-10 large-6 hero-left-block overflow-block ">
           {pane}
         </div>
-        <div className="cell small-12 medium-4 large-4 hero-right-block clear-bg right-radius">
+        <div className="cell small-12 medium-10 large-4 hero-right-block clear-bg ">
           <img
             src={climb.climbImage}
-            className="climb-show-image"
-            alt="placeholder pictures of mountains"
+            className="climb-show-image shadow"
+            alt="placeholder picture of mountains"
           />
         </div>
       </div>

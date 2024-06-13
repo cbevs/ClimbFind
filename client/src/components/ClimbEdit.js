@@ -149,11 +149,13 @@ const ClimbEdit = ({ changePaneEdit, climb, setClimb, setParentFeatures }) => {
 
   return (
     <>
-    <p onClick={changePaneEdit} className="area-climb-button">Take me back!</p>
+    <FontAwesomeIcon icon="fa-solid fa-arrow-left" title="Previous Pane" className="add-icon" onClick={changePaneEdit} />
+      <p className="icon-text-p">Take me back!</p>
+
     <ClimbDeleteButton climb={climb} />
       <form className="new-climb-form" onSubmit={onSubmitHandler}>
         <label>
-          Climb Name:
+        <p className="form-input-p">Climb Name:</p>
           <input
           className="new-climb-form-option"
             type="text"
@@ -164,7 +166,7 @@ const ClimbEdit = ({ changePaneEdit, climb, setClimb, setParentFeatures }) => {
         </label>
 
         <label>
-          What grade is it on the V scale?:
+        <p className="form-input-p">What grade is it on the V scale?:</p>
           <select
             name="grade"
             onChange={handleInputChange}
@@ -176,12 +178,12 @@ const ClimbEdit = ({ changePaneEdit, climb, setClimb, setParentFeatures }) => {
         </label>
 
         <label className="climb-input-left-pad">
-          Rating:
-          {ratingStars}
+          <p className="form-input-p">Rating:</p>
+          <div className="star-div">{ratingStars}</div>
         </label>
 
         <label>
-          Description:
+        <p className="form-input-p">Description:</p>
           <textarea
             name="description"
             onChange={handleInputChange}
@@ -190,7 +192,7 @@ const ClimbEdit = ({ changePaneEdit, climb, setClimb, setParentFeatures }) => {
         </label>
 
         <label>
-          Directions:
+        <p className="form-input-p">Directions:</p>
           <textarea
             name="directions"
             onChange={handleInputChange}
@@ -199,8 +201,8 @@ const ClimbEdit = ({ changePaneEdit, climb, setClimb, setParentFeatures }) => {
         </label>
 
         <label>
-          What features does this climb have? Hint: Hold ctrl (pc) or cmd (mac) to
-          select multiple!
+        <p className="form-input-p">What features does this climb have? Hint: Hold ctrl (pc) or cmd (mac) to
+          select multiple!</p>
           <select
             name="selectedFeatures"
             multiple={true}
@@ -225,13 +227,13 @@ const ClimbEdit = ({ changePaneEdit, climb, setClimb, setParentFeatures }) => {
         
         <ErrorList errors={errors} />
         <div className="button-group">
-          <button type="button" className="button" onClick={clearForm}>
+          <button type="button" className="button app-button" onClick={clearForm}>
             Clear
           </button>
-          <button type="button" className="button" onClick={setInitialClimb}>
+          <button type="button" className="button app-button" onClick={setInitialClimb}>
             Reset
           </button>
-          <input className="button" type="submit" value="Submit" />
+          <input className="button app-button" type="submit" value="Submit" />
         </div>
       </form>
     </>

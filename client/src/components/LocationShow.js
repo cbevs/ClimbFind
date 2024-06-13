@@ -1,25 +1,21 @@
 import React, { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useParams } from "react-router-dom"
 import AreaTile from "./AreaTile"
 import AreaForm from "./AreaForm"
 import mapLoader from "../services/mapLoader"
 import WeatherPane from "./WeatherPane"
 import AddCoordinates from "./AddCoordinates"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const LocationShow = (props) => {
   const { id } = useParams()
   const [location, setLocation] = useState([])
   const [showNewAreaForm, setShowNewAreaForm] = useState(false)
-  const [showLocationData, setShowLocationData] = useState(false)
-  const [leftRadiusClass, setLeftRadiusClass] = useState("left-radius")
-  const [rightRadiusClass, setrightRadiusClass] = useState("right-radius")
+  const [loaded, setLoaded] = useState("page-loading")
   let locationPane
   let areasArray
-  let locationDataArea
-  let expandArrow
   let weatherPane
+  let locationDataArea
 
   const getLocation = async () => {
     try {
@@ -30,10 +26,15 @@ const LocationShow = (props) => {
       }
       const responseBody = await response.json()
       setLocation(responseBody.location)
+      if (responseBody.location.latitude && responseBody.location.longitude) {
+        mapLoader(responseBody.location.latitude, responseBody.location.longitude)
+      }
+      setLoaded("hidden")
     } catch (error) {
       console.error(error)
     }
   }
+  
 
   const changePane = () => {
     if (showNewAreaForm) {
@@ -43,60 +44,28 @@ const LocationShow = (props) => {
     }
   }
 
-  if (location.latitude && location.longitude && showLocationData > 0) {
-    mapLoader(location.latitude, location.longitude)
-  }
-
-  const showLocationDataPane = () => {
-    if (showLocationData) {
-      setShowLocationData(false)
-      setLeftRadiusClass("left-radius")
-      setrightRadiusClass("right-radius")
-    } else {
-      setLeftRadiusClass("")
-      setrightRadiusClass("")
-      setShowLocationData(true)
-    }
-  }
-
   if (location.weather) {
     weatherPane = <WeatherPane weatherData={location.weather} name={location.name} />
-  } else {
-    weatherPane = (
+  }
+  
+  if (!location.latitude && !location.longitude && loaded === "hidden" && props.user ) {
+    locationDataArea = (
       <>
         <p className="coordinates-p">Have the coordinates? Add them below!</p>
         <AddCoordinates location={location} setLocation={setLocation} />
       </>
     )
-  }
-
-  const locationData = (
-    <div className="grid-x">
-      <div className="cell small-12 medium-4 large-4">
-        <div id="map" className="map-block"></div>
-      </div>
-
-      <div className="cell small-12 medium-4 large-4 weather-block overflow-block">
-        {weatherPane}
-      </div>
-    </div>
-  )
-
-  if (showLocationData) {
-    locationDataArea = locationData
-    expandArrow = (
-      <>
-        <FontAwesomeIcon icon="fa-solid fa-angles-up" />
-        <p className="climb-arrow-p">Hide map & weather</p>
-      </>
-    )
   } else {
-    locationDataArea = null
-    expandArrow = (
-      <>
-        <FontAwesomeIcon icon="fa-solid fa-angles-down" />
-        <p className="climb-arrow-p">Show map & weather</p>
-      </>
+    locationDataArea = (
+      <div className="grid-x">
+        <div className="cell small-12 medium-10 large-6">
+          <div id="map" className="map-block"></div>
+        </div>
+
+        <div className="cell small-12 medium-10 large-6 weather-block overflow-block">
+          {weatherPane}
+        </div>
+      </div>
     )
   }
 
@@ -107,9 +76,8 @@ const LocationShow = (props) => {
         <p className="show-p">{location.location}</p>
         <p className="show-p">{location.description}</p>
         <div className="crud-buttons">
-          <p onClick={changePane} className="area-climb-button">
-            Add New Area
-          </p>
+          <FontAwesomeIcon icon="fa-solid fa-plus" title="Add New Area" className="add-icon" onClick={changePane} />
+          <p className="icon-text-p">Add new area</p>
         </div>
       </>
     )
@@ -135,9 +103,10 @@ const LocationShow = (props) => {
 
   return (
     <div className="show-block">
+      <div className={loaded}></div>
       <div className="grid-x">
         <div
-          className={`cell small-12 medium-4 large-4 hero-left-block overflow-block ${leftRadiusClass}`}
+          className="cell small-12 medium-10 large-6 hero-left-block overflow-block"
         >
           {(!showNewAreaForm) ? (
             locationPane
@@ -149,12 +118,9 @@ const LocationShow = (props) => {
               setLocation={setLocation}
             />
           )}
-          <span className="climb-arrow" onClick={showLocationDataPane}>
-            {expandArrow}
-          </span>
         </div>
         <div
-          className={`cell small-12 medium-4 large-4 hero-right-block overflow-block ${rightRadiusClass}`}
+          className="cell small-12 medium-10 large-6 hero-right-block overflow-block"
         >
           {areasArray}
         </div>

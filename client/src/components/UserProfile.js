@@ -49,21 +49,21 @@ const UserProfile = ({ user }) => {
 
   if (!userProfile) {
     display = <div className="grid-x no-user-error">
-     <h1>No climbers live at this address <FontAwesomeIcon icon="fa-regular fa-face-sad-tear" /></h1>
+     <h1 className="no-user-h1">No climbers live at this address <FontAwesomeIcon icon="fa-regular fa-face-sad-tear" /></h1>
      <Link to="/" className="climb-link heavy">Back to home</Link>
     </div>
   } else {
     display = <div className="show-block">
       <div className="grid-x">
-      <div className="cell small-12 medium-4 large-4 hero-left-block overflow-block left-radius">
+      <div className="cell small-12 medium-10 large-4 hero-left-block overflow-block">
       <FontAwesomeIcon icon="fa-regular fa-hand-peace" className="large-text" />
       { user.id === userProfile.id 
-        ? <h2>You're looking pretty good, {user.username}! </h2> 
-        : <h2>{userProfile.username} looks pretty good, don't they?</h2> }
+        ? <h2 className="show-h2">You're looking pretty good, {user.username}! </h2> 
+        : <h2 className="show-h2">{userProfile.username} looks pretty good, don't they?</h2> }
       <p className="climbs-sent-text">Climbs {userProfile.username} has sent</p>
       <UserTicklist user={userProfile} currentUser={user} />
       </div>
-      <div className="cell small-12 medium-4 large-4 hero-right-block overflow-block relative right-radius">
+      <div className="cell small-12 medium-10 large-4 hero-right-block overflow-block relative shadow ">
         <img src={userProfile.profileImage} className="profile-page-image"           alt="profile-picture"></img>
         {imagePane}
       </div>

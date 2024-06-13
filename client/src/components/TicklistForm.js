@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import ErrorList from "./layout/ErrorList";
 import translateServerErrors from "../services/translateServerErrors";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const TicklistForm = ({ changePane, climbId, user }) => {
   
   const [ticklist, setTicklist] = useState({
@@ -61,10 +63,11 @@ const TicklistForm = ({ changePane, climbId, user }) => {
 
   return (
     <>
-    <p onClick={changePane} className="area-climb-button ">Take me back!</p>
+    <FontAwesomeIcon icon="fa-solid fa-arrow-left" title="Previous Window" className="add-icon" onClick={changePane} />
+    <p className="icon-text-p">Take me back!</p>
     <form onSubmit={submitNewTick}>
         <label>
-          Notes:
+          <p className="form-input-p">Notes:</p>
           <textarea
             name="notes"
             onChange={handleInputChange}
@@ -73,7 +76,7 @@ const TicklistForm = ({ changePane, climbId, user }) => {
         </label>
 
         <label>
-          Date Sent:
+        <p className="form-input-p">Date Sent:</p>
           <input
             type="date"
             name="date"
@@ -87,10 +90,10 @@ const TicklistForm = ({ changePane, climbId, user }) => {
         
         <ErrorList errors={errors} />
         <div className="button-group">
-          <button type="button" className="button" onClick={clearForm}>
+          <button type="button" className="button app-button" onClick={clearForm}>
             Clear
           </button>
-          <input className="button" type="submit" value="Submit" />
+          <input className="button app-button" type="submit" value="Submit" />
           { (!submitted) ? null : tickSubmitted}
         </div>
       </form>

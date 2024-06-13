@@ -34,9 +34,9 @@ const UserTicklist = ({ user, currentUser }) => {
   if (ticklistArray.length !== 0) {
     tickPane = ticklistArray
   } else if (currentUser.id === id) {
-    tickPane = <p>You haven't logged any climbs!</p>
+    tickPane = <p className="form-input-p">You haven't logged any climbs!</p>
   } else {
-    tickPane = <p>This user hasn't logged any climbs!</p>
+    tickPane = <p className="form-input-p">This user hasn't logged any climbs!</p>
   }
 
   return (

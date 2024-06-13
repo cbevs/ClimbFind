@@ -88,12 +88,14 @@ const PasswordResetForm = ({ id, token }) => {
 
   return (
     <div className="grid-container">
+      <h1 className="form-h1">Reset Password</h1>
       {errorMessage}
       <form onSubmit={submitNewPassword}>
         <label>
-          New Password:
+          <p className="form-input-p">New Password:</p>
           <div className="relative">
             <input
+              className="form-round"
               type={textType}
               name="password"
               onChange={handleInputChange}
@@ -105,9 +107,10 @@ const PasswordResetForm = ({ id, token }) => {
         </label>
 
         <label>
-          Confirm Password:
+        <p className="form-input-p">Confirm Password:</p>
           <div className="relative">
             <input
+              className="form-round"
               type={textType}
               name="confirmPassword"
               onChange={handleInputChange}
@@ -119,7 +122,7 @@ const PasswordResetForm = ({ id, token }) => {
         </label>
 
         <div>
-          <input type="submit" className="button" value="Update Password" />
+          <input type="submit" className="button app-button" value="Update Password" />
         </div>
       </form>
     </div>

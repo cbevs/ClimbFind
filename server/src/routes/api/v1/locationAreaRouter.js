@@ -12,8 +12,8 @@ locationAreaRouter.post("/", async (req,res) => {
 
   try {
     if(!body.name) {
-      const missingName = [{message: "Name is a required property", keyword: 'required' }]
-      return res.status(422).json({ errors: { name: missingName } })
+      const missingName = [{message: "is a required property", keyword: 'required' }]
+      return res.status(422).json({ errors: { Name: missingName } })
     }
 
     const existingArea = await Area.query().findOne({ name: body.name, locationId: locationId })

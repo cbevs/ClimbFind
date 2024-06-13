@@ -25,13 +25,13 @@ const ToeHookPage = () => {
   if (climbs.length > 0) {
     climbPane = climbsArray
   } else {
-    climbPane = <div className="no-climbs"><h2>No climbs found!</h2></div>
+    climbPane = <div className="no-climbs"><h2 className="no-climbs-h2">No climbs found!</h2></div>
   }
 
   return (
     <div className="show-block">
       <div className="grid-x">
-        <div className="cell small-12 medium-4 large-4 hero-left-block overflow-block left-radius">         
+        <div className="cell small-12 medium-10 large-6 hero-left-block overflow-block ">         
           <h2 className="hero-h2">Toe Hook</h2>
           <p className="hold-segment">What is a toe hook?</p>
           <p>
@@ -40,7 +40,7 @@ const ToeHookPage = () => {
           <p className="hold-segment">How do I get better at toe hooks?</p>
           <p>Generally when toe hooking you want to keep your leg straight and imagine you're pulling it up toward your chest in order to create compression. Flex your ankle toward your body to help pull you into the wall. If your leg is bent, try to use your other foot to push off of the wall near your toe hook, creating compression between your feet (this movement is called a bicycle). Try to get as much rubber from the top of your shoe to be in contact with the hold. While not always the case, there are times when your shoe comes into play. A shoe with a full rubber top will be able to toe hook much more effectively than a shoe with a small toe rubber patch.</p>
         </div>
-        <div className="cell small-12 medium-4 large-4 hero-right-block overflow-block right-radius">
+        <div className="cell small-12 medium-10 large-6 hero-right-block overflow-block ">
           {climbPane}
         </div>
       </div>

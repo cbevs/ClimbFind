@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ClimbDeleteButton = ({ climb }) => {
   const [confirmDelete, setConfirmDelete] = useState(false)
@@ -30,12 +31,31 @@ const ClimbDeleteButton = ({ climb }) => {
     return <Redirect push to={`/areas/${climb.areaId}`} />
   }
 
-  let deleteButton = <p onClick={changeButton} className="area-climb-button">Delete Climb</p>
+  let deleteButton = (
+    <>
+      <FontAwesomeIcon
+        icon="fa-solid fa-trash"
+        title="Delete Climb"
+        className="delete-icon add-icon"
+        onClick={changeButton}
+      />
+      <p className="icon-text-p">Delete Climb</p>
+    </>
+  )
     
   if (confirmDelete) {
     deleteButton = <>
-      <p onClick={deleteClimb} className="area-climb-button delete-button">I'm sure!</p>
+    <FontAwesomeIcon
+        icon="fa-solid fa-trash"
+        title="Delete Climb"
+        className="delete-icon add-icon delete-button"
+        onClick={deleteClimb}
+      />
+      <p className="icon-text-p">I'm sure!</p>
+      <div>
+      <FontAwesomeIcon icon="fa-solid fa-triangle-exclamation" className="hazard-icon" />
       <p className="confirm-delete">There may be ticks on this climb related to other users. Are you sure you want to delete this climb?</p>
+      </div>
     </>
   }
 

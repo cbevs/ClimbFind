@@ -25,13 +25,13 @@ const CrimpPage = () => {
   if (climbs.length > 0) {
     climbPane = climbsArray
   } else {
-    climbPane = <div className="no-climbs"><h2>No climbs found!</h2></div>
+    climbPane = <div className="no-climbs"><h2 className="no-climbs-h2">No climbs found!</h2></div>
   }
 
   return (
     <div className="show-block">
       <div className="grid-x">
-        <div className="cell small-12 medium-4 large-4 hero-left-block overflow-block left-radius">
+        <div className="cell small-12 medium-10 large-6 hero-left-block overflow-block ">
         <h2 className="hero-h2">Crimp</h2>
         <p className="hold-segment">What is a crimp?</p>
         <p>A crimp is a small edge, usually measured in finger pads (the segments for your finger). Crimps are the holds that drive fear into a climber's heart and brings pain to their fingertips. Most finger-based injuries happen due to crimps, but with a little mindful training and proper warm ups, you can turn these little razors from enemies to friends.</p>
@@ -42,7 +42,7 @@ const CrimpPage = () => {
         <p className="hold-segment">Repeaters</p>
         <p>Repeaters are more often thought of a way to build endurance in the fingers and are also a great rehab tool if your fingers are feeling a little under the weather from crimping a little too much/hard. You'll want to find a weight that doesn't cause any pain and feels like you can complete all sets. For repeaters, a good place to start is 7 seconds on, 2 seconds off for 6 reps. Do this for 4-6 sets.</p>
         </div>
-        <div className="cell small-12 medium-4 large-4 hero-right-block overflow-block right-radius">
+        <div className="cell small-12 medium-10 large-6 hero-right-block overflow-block ">
           {climbPane}
         </div>
       </div>

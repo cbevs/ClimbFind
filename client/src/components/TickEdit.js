@@ -56,7 +56,7 @@ const TickEdit = ({ existingTick, changePane, ticklist, setTicklist }) => {
   return(
     <form onSubmit={submitUpdatedTick} className="tick-edit">
         <label>
-          Notes:
+          <p className="form-input-p">Notes:</p>
           <textarea
             name="notes"
             onChange={handleInputChange}
@@ -65,7 +65,7 @@ const TickEdit = ({ existingTick, changePane, ticklist, setTicklist }) => {
         </label>
 
         <label>
-          Date Sent:
+        <p className="form-input-p">Date Sent:</p>
           <input
             type="date"
             name="date"
@@ -79,7 +79,7 @@ const TickEdit = ({ existingTick, changePane, ticklist, setTicklist }) => {
         
         <ErrorList errors={errors} />
         <div className="button-group">
-          <input className="button" type="submit" value="Submit" />
+          <input className="button app-button" type="submit" value="Submit" />
         </div>
       </form>
   )

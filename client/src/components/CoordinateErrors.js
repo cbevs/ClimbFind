@@ -4,7 +4,7 @@ const CoordinateErrors = (props) => {
   let index = 0
   const errorItems = props.errors.map(error => {
     index++
-    return <li className="errors" key={index}>
+    return <li className="coordinates-errors" key={index}>
         {error}
     </li>
   })

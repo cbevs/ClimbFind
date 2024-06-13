@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ErrorList from "./layout/ErrorList";
 import translateServerErrors from "../services/translateServerErrors";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const AreaForm = ({ changePane, locationId, location, setLocation }) => {
 
@@ -54,14 +55,16 @@ const AreaForm = ({ changePane, locationId, location, setLocation }) => {
       latitude: "",
       longitude: ""
     })
+    setErrors([])
   }
 
   return (
     <>
-      <p onClick={changePane} className="area-climb-button">Take me back!</p>
+      <FontAwesomeIcon icon="fa-solid fa-arrow-left" title="Previous Window" className="add-icon" onClick={changePane} />
+      <p className="icon-text-p">Take me back!</p>
       <form onSubmit={submitArea}>
         <label>
-          Area Name:
+        <p className="form-input-p">Area Name:</p>
           <input
             className="new-form-option"
             type="text"
@@ -72,7 +75,7 @@ const AreaForm = ({ changePane, locationId, location, setLocation }) => {
         </label>
 
         <label>
-          Description:
+        <p className="form-input-p">Description:</p>
           <textarea
             className="new-form-option"
             type="text"
@@ -83,7 +86,7 @@ const AreaForm = ({ changePane, locationId, location, setLocation }) => {
         </label>
 
         <label>
-          Latitude:
+          <p className="form-input-p">Latitude:</p>
           <input
             className="new-form-option"
             type="text"
@@ -94,7 +97,7 @@ const AreaForm = ({ changePane, locationId, location, setLocation }) => {
         </label>
 
         <label>
-          Longitude:
+          <p className="form-input-p">Longitude:</p>
           <input
             className="new-form-option"
             type="text"
@@ -105,10 +108,10 @@ const AreaForm = ({ changePane, locationId, location, setLocation }) => {
         </label>
         <ErrorList errors={errors} />
         <div className="button-group">
-          <button type="button" className="button" onClick={clearForm}>
+          <button type="button" className="button app-button" onClick={clearForm}>
             Clear
           </button>
-          <input className="button" type="submit" value="Submit" />
+          <input className="button app-button" type="submit" value="Submit" />
         </div>
       </form>
     </>

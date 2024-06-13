@@ -19,7 +19,7 @@ const ClimbTile = ({ climb }) => {
           <Link to={`/climbs/${climb.id}`} className="climb-link heavy">{climb.name}</Link>
           </li>
         <li className="climb-info-title area-small-text">
-          <Link to={`/areas/${climb.areaId}`} className="climb-link light">{climb.area}</Link>
+          <Link to={`/areas/${climb.areaId}`} className="climb-link medium">{climb.area}</Link>
         </li>
       </ul>
       <ul className="climb-tile climb-tile-pad-left">
