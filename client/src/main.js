@@ -1,6 +1,5 @@
 import React from "react";
 import { render } from "react-dom";
-
 import App from "./components/App";
 import config from "./config";
 import RedBox from "redbox-react";
