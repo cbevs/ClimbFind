@@ -38,7 +38,7 @@ const JugPage = () => {
         <p className="hold-segment">How do I get better at jugs?</p>
         <p>Jugs aren't usually something that climbers seek to get better at, as they generally are pretty easy to grab right off the bat. If you are looking to get better at them, however, start by climbing on them more!</p>
         </div>
-        <div className="cell small-12 medium-10 large-6 hero-right-block overflow-block ">
+        <div className="cell small-12 medium-10 large-6 orange-right-block overflow-block ">
           {climbPane}
         </div>
       </div>

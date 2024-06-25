@@ -40,7 +40,7 @@ const HeelHookPage = () => {
           <p className="hold-segment">How do I get better at heel hooks?</p>
           <p>Make sure you are pointing your toes away from the wall when possible! Instead of throwing your heel on the hold and simply putting your weight on it, put that heel to work and pull with your legs to bring your body closer to the wall. Most heel hooks require hamstring and core strength as well as flexibility, so get to work (squats, deadlifts, kettlebell swings, stretch)! You can practice them by hopping on an easy climb and try to complete each move using heel hooks to move yourself up the route instead of pushing with your legs.</p>
         </div>
-        <div className="cell small-12 medium-10 large-6 hero-right-block overflow-block ">
+        <div className="cell small-12 medium-10 large-6 orange-right-block overflow-block ">
           {climbPane}
         </div>
       </div>

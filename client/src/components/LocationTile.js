@@ -5,13 +5,13 @@ const LocationTile = ( {location} ) => {
 
   return (
     <>
-      <ul className="climb-tile">
-        <li>
+      <ul className="climb-tile large-text">
+        <li className="climb-info-title">
           <Link to={`/locations/${location.id}`} className="climb-link heavy">
             {location.name}
           </Link>
         </li>
-        <li>
+        <li className="climb-info-title area-small-text">
           {location.location}
         </li>
       </ul>

@@ -42,7 +42,7 @@ const CrimpPage = () => {
         <p className="hold-segment">Repeaters</p>
         <p>Repeaters are more often thought of a way to build endurance in the fingers and are also a great rehab tool if your fingers are feeling a little under the weather from crimping a little too much/hard. You'll want to find a weight that doesn't cause any pain and feels like you can complete all sets. For repeaters, a good place to start is 7 seconds on, 2 seconds off for 6 reps. Do this for 4-6 sets.</p>
         </div>
-        <div className="cell small-12 medium-10 large-6 hero-right-block overflow-block ">
+        <div className="cell small-12 medium-10 large-6 orange-right-block overflow-block ">
           {climbPane}
         </div>
       </div>

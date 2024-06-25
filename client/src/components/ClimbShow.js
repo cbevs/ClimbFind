@@ -115,7 +115,7 @@ const ClimbShow = (props) => {
         <div className="cell small-12 medium-10 large-6 hero-left-block overflow-block ">
           {pane}
         </div>
-        <div className="cell small-12 medium-10 large-4 hero-right-block clear-bg ">
+        <div className="cell small-12 medium-10 large-6 hero-right-block clear-bg ">
           <img
             src={climb.climbImage}
             className="climb-show-image shadow"

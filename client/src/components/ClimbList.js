@@ -39,7 +39,7 @@ const ClimbList = (props) => {
           <h2 className="hero-h2">Here are the latest climbs in our database!</h2>
           <ClimbSearch setClimbs={setClimbs}/>
         </div>
-        <div className="cell small-12 medium-10 large-6 hero-right-block overflow-block ">
+        <div className="cell small-12 medium-10 large-6 orange-right-block overflow-block ">
           { climbsArray.length !== 0 ? climbsArray : <div className="no-climbs"><h2 className={showNoClimbs}>No climbs found!</h2></div>}
         </div>
       </div>
