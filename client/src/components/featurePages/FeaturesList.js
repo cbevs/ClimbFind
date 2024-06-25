@@ -19,11 +19,11 @@ const FeaturesList = () => {
   return (
     <div className="show-block">
       <div className="grid-x">
-        <div className="cell small-12 medium-10 large-6 hero-left-block overflow-block ">
+        <div className="cell small-12 medium-10 large-6 hero-left-block overflow-block">
           <h2 className="hero-h2">Features</h2>
           <p>Here is a list of all of the features Boulder Buddy keeps track of. Click on a feature to see detailed information about it and to get a list of climbs that have those features.</p>
         </div>
-        <div className="cell small-12 medium-10 large-6 hero-right-block overflow-block ">
+        <div className="cell small-12 medium-10 large-6 orange-right-block overflow-block features-block">
           <ul className="features-list">
             {featuresLinks}
           </ul>

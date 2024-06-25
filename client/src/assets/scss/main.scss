@@ -21,6 +21,10 @@ body {
   color: #fff;
 }
 
+.grid-x {
+  margin-bottom: 1rem;
+}
+
 .hero-h2 {
   font-family: "Patua One", "Times New Roman", serif;
   line-height: 1.2;
@@ -124,10 +128,6 @@ button:hover {
   color:#5cb085;
 }
 
-.menu .menu-text {
-  color: #448b3a;
-}
-
 .top-bar {
   background-color: #fff;
 }
@@ -168,6 +168,16 @@ button:hover {
 .hero-icon-container {
   padding-left: 2rem;
   height: 50%;
+}
+
+.orange-right-block {
+  background-color: #dbac74;
+  border-radius: 10px;
+  height: 450px;
+}
+
+.features-block {
+  height: 448px;
 }
 
 .register-form-error {
@@ -1024,7 +1034,7 @@ no-format-link:focus {
     }
     
     hr {
-      border: 1px solid #448b3a;
+      border: 1px solid #d29243;
     }
 
     .map-block {

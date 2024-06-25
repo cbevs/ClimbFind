@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useRef, useEffect} from "react";
 import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import HeroImage from "./HeroImage";
+import getHeroImage from "../services/getHeroImage";
 
-const Hero = (props) => {
- 
+const Hero = () => {
+  
+  const refImage = useRef(getHeroImage())
+
+  const imagePane = (
+    <div className="front-page-image-container">
+      <img
+        className="front-page-image"
+        src={refImage.current.url}
+        alt={refImage.current.name}
+      ></img>
+      <p className="hero-image-text">{refImage.current.name}</p>
+    </div>
+  )
+  
   return (
     <div className="hero-block">
       <div className="grid-x">
@@ -17,7 +30,7 @@ const Hero = (props) => {
           </div>
         </div>
         <div className="cell small-12 medium-10 large-4 hero-right-block ">
-          <HeroImage />
+          {imagePane}
         </div>
       </div>
     </div>

@@ -40,7 +40,7 @@ const PocketPage = () => {
           <p className="hold-segment">How do I get better at pockets?</p>
           <p>As with <Link to="/features/crimp" className="no-format-link hold-link">crimps</Link>, pocket strength can be greatly increased with hangboarding/block hanging. Start with three fingers open handed, then progress to two fingers once your three finger hold feels strong. Be careful not to overtrain your fingers when doing this! Two times a week is more than enough.</p>
         </div>
-        <div className="cell small-12 medium-10 large-6 hero-right-block overflow-block ">
+        <div className="cell small-12 medium-10 large-6 orange-right-block overflow-block ">
           {climbPane}
         </div>
       </div>
